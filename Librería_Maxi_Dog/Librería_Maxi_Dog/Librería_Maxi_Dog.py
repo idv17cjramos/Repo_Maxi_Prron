@@ -25,3 +25,6 @@ operacion=str.lower(operacion)
 
 def suma():
     numeros=int(input("Introduce los numeros que quieras sumar, separados por un espacio: \n"))
+    numerosSeparados=[numeros.split(" ")]
+    return (numerosSeparados)
+print (suma())
