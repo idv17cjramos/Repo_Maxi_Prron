@@ -23,10 +23,7 @@ print ("-"*80+  "\n")
 
 operacion=input()
 operacion=str.lower(operacion)
-a=int(input())
-b=int(input())
 
-def suma():
-    c=a+b
-    return c
-print(suma())
+numeros=int(input("Introduce los numeros que quieras sumar, separados por un espacio: \n"))
+numerosSeparados=numeros.split(" ")
+print (numerosSeparados)
