@@ -1,3 +1,4 @@
+#Bienvenido Saint Yeipi
 
 #Bienvenido Saint Yeipi
  
@@ -21,12 +22,19 @@ print("Decimal a binario")
 print("Metros a yardas")
 print("Metros a pulgadas")
 print ("-"*80+  "\n")
+<<<<<<< HEAD
  
 operacion=input("Que operacion quieres realizar? ")
 operacion=str.lower(operacion)
 
 
  
+=======
+
+operacion=input("Que operacion quieres realizar? ")
+operacion=str.lower(operacion)
+
+>>>>>>> 248b6ed01e48785676c08cdb6f9c486d6202edde
 def suma():
     sumita = input("Introduce numeros: ")
     sumita = [int(x) for x in sumita.split (" ") ]
@@ -34,6 +42,7 @@ def suma():
     for numero in sumita:
         total += numero
     print ("La suma es:", total)
+<<<<<<< HEAD
  
 def resta():
     restita = input("Introduce numeros: ")
@@ -43,18 +52,36 @@ def resta():
         total = numero
     print ("La resta es:", total)
  
+=======
+
+def resta():
+    x  =  int(input("Escribe el primer número que quieres multiplicar: "))
+    y  =  int(input("Escribe el segundo número que quieres multiplicar: "))
+    print (x-y)
+
+>>>>>>> 248b6ed01e48785676c08cdb6f9c486d6202edde
 def multiplicacion():
     x  =  int(input("Escribe el primer número que quieres multiplicar: "))
     y  =  int(input("Escribe el segundo número que quieres multiplicar: "))
     print (x*y)
+<<<<<<< HEAD
   
 def division():
     x  =  int(input("Escribe el dividendo: "))
     y  =  int(input("Escribe el divisor: "))
     print (x/y)
  
+=======
 
 
+>>>>>>> 248b6ed01e48785676c08cdb6f9c486d6202edde
+
+def division():
+    x  =  int(input("Escribe el dividendo: "))
+    y  =  int(input("Escribe el divisor: "))
+    print (x/y)
+
+<<<<<<< HEAD
 if (operacion== "suma"):
     suma()
 elif(operacion=="multiplicacion"):
@@ -63,3 +90,6 @@ elif (operacion == "division" ):
     division()
 elif (operacion == "guebito con cacsun" ):
     print("Estas reprobado para toda la vida :)")
+=======
+division()
+>>>>>>> 248b6ed01e48785676c08cdb6f9c486d6202edde
