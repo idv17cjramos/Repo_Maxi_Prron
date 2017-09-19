@@ -1,0 +1,21 @@
+
+print ("Bienvenido a la librería Maxi Dog")
+print ("-"*80+  "\n")
+print ("¿Qué es lo que deseas hacer el día de hoy? Introduce el número de la función y después aprieta enter")
+
+print("1.-Suma")
+print("2.-Resta")
+print("3.-Multiplicación")
+print("4.-División")
+print("5.-Potencia")
+print("6.-Raíz")
+print("7.-Módulo")
+print("8.-Conversión de binario a hexadecimal")
+print("9.-Conversión de hexadecimal a binario")
+print("10.-Conversión de decimal a hexadecimal")
+print("11.-Conversión de hexadecimal a decimal")
+print("12.-Conversión de binario a decimal")
+print("14.-Conversión de decimal a binario")
+print("15.-Metros a Yardas")
+print("16.-Metros a pulgadas")
+
