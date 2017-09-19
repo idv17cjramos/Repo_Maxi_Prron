@@ -18,6 +18,8 @@ print("Conversión de binario a decimal")
 print("Conversión de decimal a binario")
 print("Metros a Yardas")
 print("Metros a pulgadas")
+print ("-"*80+  "\n")
+
 
 
 
