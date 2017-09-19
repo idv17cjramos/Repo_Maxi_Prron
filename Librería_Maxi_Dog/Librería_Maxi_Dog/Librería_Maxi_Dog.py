@@ -18,6 +18,8 @@ print("Binario a decimal")
 print("Decimal a binario")
 print("Metros a yardas")
 print("Metros a pulgadas")
+print ("-"*80+  "\n")
+
 
 operacion=input()
 operacion=str.lower(operacion)
