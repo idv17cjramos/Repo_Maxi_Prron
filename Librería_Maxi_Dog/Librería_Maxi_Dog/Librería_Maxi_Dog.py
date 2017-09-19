@@ -59,5 +59,9 @@ elif (operacion == "resta" ):
 #Y esta es la magia de los easter eggs
 elif (operacion == "guebito con cacsun" ):
     print("mmmmm uma delisia :v")
-    time.sleep(4)
+    time.sleep(3)
+    print("e.e")
+    time.sleep(2)
+    print("Es neta, vato? >:V")
+    time.sleep(3)
     print("no, ya enserio, estas reprobado para toda la vida :)")
