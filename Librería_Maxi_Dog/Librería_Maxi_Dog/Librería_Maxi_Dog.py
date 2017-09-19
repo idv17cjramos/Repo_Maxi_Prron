@@ -25,6 +25,7 @@ operacion=str.lower(operacion)
 separator = " "
 
 def suma():
+<<<<<<< HEAD
     # Aqui se hace la machaca *pas pas*
     sumita = input("Introduce numeros: ")
     sumita = [int(x) for x in sumita.split (" ") ] 
@@ -32,6 +33,15 @@ def suma():
     for numero in sumita:
         total += numero
     print ("La suma es:", total)
+=======
+    numeros=int(input("Introduce los numeros que quieras sumar, separados por un espacio: \n"))
+    numerosSeparados=[numeros.split(" ")]
+    return (numerosSeparados)
+print (suma())
+#    numeros =  int(input("Escribe los numeros que quieres sumar, separados por un espacio: \n").split(separator(" ")))
+#    print(numeros)
+#    print ("The sum of numbers is: ")+str(sum(numeros))
+>>>>>>> 4f25e961a9820f40fedb86e951cef83a83c886bc
 
 def resta():
     # Aqui se hace la machaca *pas pas*
@@ -43,4 +53,8 @@ def resta():
     print ("La resta es:", total)
 
 suma()
+<<<<<<< HEAD
 resta()
+=======
+
+>>>>>>> 4f25e961a9820f40fedb86e951cef83a83c886bc
