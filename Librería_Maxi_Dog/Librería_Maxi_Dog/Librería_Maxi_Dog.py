@@ -25,3 +25,6 @@ print ("-"*80+  "\n")
 
 
 
+operacion=input()
+operacion=str.lower(operacion)
+print (operacion)
