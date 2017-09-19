@@ -22,9 +22,17 @@ print ("-"*80+  "\n")
 
 operacion=input()
 operacion=str.lower(operacion)
+separator = " "
 
 def suma():
     numeros=int(input("Introduce los numeros que quieras sumar, separados por un espacio: \n"))
     numerosSeparados=[numeros.split(" ")]
     return (numerosSeparados)
 print (suma())
+#    numeros =  int(input("Escribe los numeros que quieres sumar, separados por un espacio: \n").split(separator(" ")))
+#    print(numeros)
+#    print ("The sum of numbers is: ")+str(sum(numeros))
+
+
+suma()
+
