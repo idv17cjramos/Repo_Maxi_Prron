@@ -33,8 +33,8 @@ def suma():
     print ("La suma es:", total)
  
 def resta():
-    x  =  int(input("Escribe el primer número que quieres multiplicar: "))
-    y  =  int(input("Escribe el segundo número que quieres multiplicar: "))
+    x  =  int(input("Escribe el primer numero: "))
+    y  =  int(input("Escribe el segundo número: "))
     print (x-y)
 
 def multiplicacion():
