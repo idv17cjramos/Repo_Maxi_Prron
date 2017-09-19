@@ -20,10 +20,8 @@ print("Metros a yardas")
 print("Metros a pulgadas")
 print ("-"*80+  "\n")
 
-
 operacion=input()
 operacion=str.lower(operacion)
 
-numeros=int(input("Introduce los numeros que quieras sumar, separados por un espacio: \n"))
-numerosSeparados=numeros.split(" ")
-print (numerosSeparados)
+def suma():
+    numeros=int(input("Introduce los numeros que quieras sumar, separados por un espacio: \n"))
