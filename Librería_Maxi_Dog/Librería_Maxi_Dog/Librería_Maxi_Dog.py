@@ -19,3 +19,6 @@ print("14.-Conversión de decimal a binario")
 print("15.-Metros a Yardas")
 print("16.-Metros a pulgadas")
 
+operacion=input()
+operacion=str.lower(operacion)
+print (operacion)
