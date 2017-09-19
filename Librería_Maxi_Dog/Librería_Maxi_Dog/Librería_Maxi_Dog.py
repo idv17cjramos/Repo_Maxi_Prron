@@ -53,5 +53,7 @@ elif(operacion=="multiplicacion"):
     multiplicacion()
 elif (operacion == "division" ):
     division()
+elif (operacion == "resta" ):
+    resta()
 elif (operacion == "guebito con cacsun" ):
     print("Estas reprobado para toda la vida :)")
