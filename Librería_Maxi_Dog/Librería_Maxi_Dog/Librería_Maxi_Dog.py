@@ -57,12 +57,12 @@ def division():
 
 
 def potencia():
-    numeroBase = int(input("Escriba el número que quiera elevar"))
-    exponente = int(input("Escriba el exponente al que lo quiera elevar")) 
+    numeroBase = int(input("Escriba el número que quiera elevar: "))
+    exponente = int(input("Escriba el exponente al que lo quiera elevar: ")) 
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
-    elif():
-
+    elif(exponente == nul):
+        print(numeroBase*numeroBase)
 
 #Menu
 
@@ -74,6 +74,8 @@ elif (operacion == "division" ):
     division()
 elif (operacion == "resta" ):
     resta()
+elif (operacion == "potencia" ):
+    potencia()
 #Easter egg
 elif (operacion == "guebito con cacsun" ):
     print("mmmmm uma delisia :v")
