@@ -61,6 +61,7 @@ def potencia():
     exponente = int(input("Escriba el exponente al que lo quiera elevar")) 
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
+    elif():
 
 
 #Menu
