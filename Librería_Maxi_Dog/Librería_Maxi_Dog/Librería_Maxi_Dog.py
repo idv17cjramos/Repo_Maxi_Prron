@@ -22,7 +22,9 @@ print("Hexadecimal a decimal")
 print("Binario a decimal")
 print("Decimal a binario")
 print("Metros a yardas")
+print("Yardas a metros")
 print("Metros a pulgadas")
+print("Pulgadas a metros")
 print ("-"*80+  "\n")
 
 operacion=input("Que operacion quieres realizar? ")
@@ -70,6 +72,15 @@ def potencia():
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
 
+def MetrosaYardas():
+    metros=int(input("Cuantos metros quieres convertir a yardas?: "))
+    Yardas=(metros*1.09361)
+    print (Yardas + " yardas")
+
+def YardasaMetros():
+    yardas=int(input("Cuantos yardas quieres convertir a metros?: "))
+    Metros=(yardas*0.9144)
+    print (Metros * " metros")
 
 #Menu
 if (operacion== "suma"):
@@ -84,6 +95,10 @@ elif (operacion == "metros a pulgadas" ):
     metrosaPulgadas()
 elif (operacion == "pulgadas a metros" ):
     pulgadasaMetros()
+elif (operacion == "metros a yardas"):
+    MetrosaYardas()
+elif (operacion=="yardas a metros"):
+    YardasaMetros()
 
 #Easter egg
 elif (operacion == "guebito con cacsun" ):
