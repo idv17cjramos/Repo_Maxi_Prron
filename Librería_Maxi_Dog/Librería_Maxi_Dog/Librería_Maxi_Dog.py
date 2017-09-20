@@ -1,5 +1,6 @@
 #Bienvenido Saint Yeipi
 import time
+
  
 print ("Bienvenido a la librería Maxi Dog")
 print ("-"*80+  "\n")
@@ -47,6 +48,12 @@ def division():
     x  =  int(input("Escribe el dividendo: "))
     y  =  int(input("Escribe el divisor: "))
     print (x/y)
+
+def potencia():
+    numeroBase = int(input("Escriba el número que quiera elevar"))
+    exponente = int(input("Escriba el exponente al que lo quiera elevar")) 
+    if (exponente == 0):
+        print ("Elevaste a cero, tu resultado es 1")
 
 if (operacion== "suma"):
     suma()
