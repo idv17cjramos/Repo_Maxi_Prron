@@ -2,9 +2,6 @@
 #Importamos el tiempo...
 import time
 
-
- 
-
 #Presentacion
 
 print ("Bienvenido a la librería Maxi Dog")
@@ -29,8 +26,10 @@ print("Metros a pulgadas")
 print ("-"*80+  "\n")
 
 operacion=input("Que operacion quieres realizar? ")
+
 #Conversor a minusculas
 operacion=str.lower(operacion)
+
 #Operaciones
 def suma():
     sumita = input("Introduce numeros: ")
@@ -55,17 +54,24 @@ def division():
     y  =  int(input("Escribe el divisor: "))
     print (x/y)
 
+def metrosaPulgadas():
+    metros = float(input("Escribe la cantidad de metros a convertir: "))
+    pulgadas = 39.3701
+    print (metros*pulgadas)
+
+def pulgadasaMetros():
+    pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
+    metros = 0.0254
+    print (pulgadas*metros)
 
 def potencia():
     numeroBase = int(input("Escriba el número que quiera elevar"))
     exponente = int(input("Escriba el exponente al que lo quiera elevar")) 
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
-    elif():
 
 
 #Menu
-
 if (operacion== "suma"):
     suma()
 elif(operacion=="multiplicacion"):
@@ -74,6 +80,11 @@ elif (operacion == "division" ):
     division()
 elif (operacion == "resta" ):
     resta()
+elif (operacion == "metros a pulgadas" ):
+    metrosaPulgadas()
+elif (operacion == "pulgadas a metros" ):
+    pulgadasaMetros()
+
 #Easter egg
 elif (operacion == "guebito con cacsun" ):
     print("mmmmm uma delisia :v")
