@@ -47,9 +47,12 @@ def resta():
     print (x-y)
 
 def multiplicacion():
-    x  =  int(input("Escribe el primer número que quieres multiplicar: "))
-    y  =  int(input("Escribe el segundo número que quieres multiplicar: "))
-    print (x*y)
+    multi = input("Introduce numeros que quieras multiplicar separados por un espacio: ")
+    multi = [int(x) for x in multi.split (" ") ]
+    total = 0
+    for numero in sumita:
+        total *= numero
+    print ("La multiplicacion es:", total)
   
 def division():
     x  =  int(input("Escribe el dividendo: "))
@@ -67,10 +70,13 @@ def pulgadasaMetros():
     print (pulgadas*metros)
 
 def potencia():
-    numeroBase = int(input("Escriba el número que quiera elevar"))
-    exponente = int(input("Escriba el exponente al que lo quiera elevar")) 
+    numeroBase = int(input("Escriba el número que quiera elevar: "))
+    exponente = input("Escriba el exponente al que lo quiera elevar: ") 
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
+    elif(exponente== ValueError):
+        print("No introdujiste exponente, se elevará al cuadrado.")
+        print("Tu resultado es " + int(numeroBase**2))
 
 def MetrosaYardas():
     metros=int(input("Cuantos metros quieres convertir a yardas?: "))
@@ -91,6 +97,8 @@ elif (operacion == "division" ):
     division()
 elif (operacion == "resta" ):
     resta()
+elif(operacion=="potencia"):
+    potencia()
 elif (operacion == "metros a pulgadas" ):
     metrosaPulgadas()
 elif (operacion == "pulgadas a metros" ):
