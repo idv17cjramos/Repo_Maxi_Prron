@@ -1,6 +1,7 @@
 #Bienvenido Saint Yeipi
+#Importamos el tiempo...
 import time
- 
+#Presentacion
 print ("Bienvenido a la librería Maxi Dog")
 print ("-"*80+  "\n")
 print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el nombre de la función y después aprieta enter\n")
@@ -23,8 +24,9 @@ print("Metros a pulgadas")
 print ("-"*80+  "\n")
 
 operacion=input("Que operacion quieres realizar? ")
+#Conversor a minusculas
 operacion=str.lower(operacion)
-
+#Operaciones
 def suma():
     sumita = input("Introduce numeros: ")
     sumita = [int(x) for x in sumita.split (" ") ]
@@ -48,6 +50,7 @@ def division():
     y  =  int(input("Escribe el divisor: "))
     print (x/y)
 
+#Menu
 if (operacion== "suma"):
     suma()
 elif(operacion=="multiplicacion"):
@@ -56,7 +59,7 @@ elif (operacion == "division" ):
     division()
 elif (operacion == "resta" ):
     resta()
-#Y esta es la magia de los easter eggs
+#Easter egg
 elif (operacion == "guebito con cacsun" ):
     print("mmmmm uma delisia :v")
     time.sleep(3)
