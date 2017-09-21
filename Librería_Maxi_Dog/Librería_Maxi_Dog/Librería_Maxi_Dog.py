@@ -42,14 +42,18 @@ def suma():
     print ("El resultado es: ", total)
  
 def resta():
-    primerValor = input("Introduce minuendo: ")
-    restita = input("Introduce sustraendos(Separados por un espacio): ")
-    restita = [int(x) for x in restita.split (" ") ]
-    total = 0
-    for numero in restita:
-        total -= numero
+    restita1 = input("Introduce minuendos (Separados por un espacio): ")
+    restita1 = [int(x) for x in restita1.split (" ") ]
+    total1 = 0
+    for numero1 in restita1:
+        total1 += numero1
+    restita2 = input("Introduce sustraendos(Separados por un espacio): ")
+    restita2 = [int(x) for x in restita2.split (" ") ]
+    total2 = 0
+    for numero2 in restita2:
+        total2 -= numero2
     print ("El total de la resta es: ")
-    print (int(primerValor) + int(total))
+    print (int(total1) + int(total2))
 
 def multiplicacion():
     multi = input("Introduce numeros que quieras multiplicar separados por un espacio: ")
