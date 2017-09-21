@@ -39,7 +39,7 @@ def suma():
     total = 0
     for numero in sumita:
         total += numero
-    print ("El resultado es: ", total)
+    print ("El resultado es: \n",total)
  
 def resta():
     restita1 = input("Introduce minuendos (Separados por un espacio): ")
@@ -52,30 +52,33 @@ def resta():
     total2 = 0
     for numero2 in restita2:
         total2 -= numero2
-    print ("El total de la resta es: ")
+    print ("El resultado es: ")
     print (int(total1) + int(total2))
 
 def multiplicacion():
-    multi = input("Introduce numeros que quieras multiplicar separados por un espacio: ")
+    multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
     multi = [int(x) for x in multi.split (" ") ]
     total = 0
-    for numero in sumita:
+    for numero in multi:
         total *= numero
-    print ("La multiplicacion es: ", total)
+    print ("El resultado es: \n", total) #Problema con el acumulador, se queda en 0
   
 def division():
     x  =  int(input("Escribe el dividendo: "))
     y  =  int(input("Escribe el divisor: "))
+    print ("El resultado es: ")
     print (x/y)
 
 def metrosaPulgadas():
     metros = float(input("Escribe la cantidad de metros a convertir: "))
     pulgadas = 39.3701
+    print ("El resultado es: ")
     print (metros*pulgadas)
 
 def pulgadasaMetros():
     pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
     metros = 0.0254
+    print ("El resultado es: ")
     print (pulgadas*metros)
 
 def potencia():
@@ -88,18 +91,20 @@ def potencia():
         print (int(numeroBase) ** int(exponente))
     except (ValueError):
         print("No introdujiste exponente, se elevará al cuadrado.")
-        print("Tu resultado es: ")
+        print("El resultado es: ")
         print(int(numeroBase) ** int(alCuadrado))
 
-def MetrosaYardas():
-    metros=int(input("Cuantos metros quieres convertir a yardas?: "))
-    Yardas=(metros*1.09361)
-    print (Yardas + " yardas")
+def metrosaYardas():
+    metros=float(input("Escribe la cantidad de metros a convertir: "))
+    yardas = 1.09361
+    print ("El resultado es: ")
+    print (metros*yardas)
 
-def YardasaMetros():
-    yardas=int(input("Cuantos yardas quieres convertir a metros?: "))
-    Metros=(yardas*0.9144)
-    print (Metros * " metros")
+def yardasaMetros():
+    yardas=float(input("Escribe la cantidad de yardas a convertir: "))
+    metros = 0.9144
+    print ("El resultado es: ")
+    print (yardas*metros)
 
 #Menu
 if (operacion== "suma"):
@@ -117,9 +122,9 @@ elif (operacion == "metros a pulgadas" ):
 elif (operacion == "pulgadas a metros" ):
     pulgadasaMetros()
 elif (operacion == "metros a yardas"):
-    MetrosaYardas()
+    metrosaYardas()
 elif (operacion=="yardas a metros"):
-    YardasaMetros()
+    yardasaMetros()
 
 #Easter egg
 elif (operacion == "guebito con cacsun" ):
