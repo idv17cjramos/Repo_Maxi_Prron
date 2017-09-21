@@ -34,17 +34,22 @@ operacion=str.lower(operacion)
 
 #Operaciones
 def suma():
-    sumita = input("Introduce numeros: ")
+    sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
     sumita = [int(x) for x in sumita.split (" ") ]
     total = 0
     for numero in sumita:
         total += numero
-    print ("La suma es:", total)
+    print ("El resultado es: ", total)
  
 def resta():
-    x  =  int(input("Escribe el primer numero: "))
-    y  =  int(input("Escribe el segundo número: "))
-    print (x-y)
+    primerValor = input("Introduce minuendo: ")
+    restita = input("Introduce sustraendos(Separados por un espacio): ")
+    restita = [int(x) for x in restita.split (" ") ]
+    total = 0
+    for numero in restita:
+        total -= numero
+    print ("El total de la resta es: ")
+    print (int(primerValor) + int(total))
 
 def multiplicacion():
     multi = input("Introduce numeros que quieras multiplicar separados por un espacio: ")
@@ -52,7 +57,7 @@ def multiplicacion():
     total = 0
     for numero in sumita:
         total *= numero
-    print ("La multiplicacion es:", total)
+    print ("La multiplicacion es: ", total)
   
 def division():
     x  =  int(input("Escribe el dividendo: "))
@@ -70,13 +75,17 @@ def pulgadasaMetros():
     print (pulgadas*metros)
 
 def potencia():
+    alCuadrado = 2
     numeroBase = int(input("Escriba el número que quiera elevar: "))
     exponente = input("Escriba el exponente al que lo quiera elevar: ") 
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
-    elif(exponente== ValueError):
+    try:
+        print (int(numeroBase) ** int(exponente))
+    except (ValueError):
         print("No introdujiste exponente, se elevará al cuadrado.")
-        print("Tu resultado es " + int(numeroBase**2))
+        print("Tu resultado es: ")
+        print(int(numeroBase) ** int(alCuadrado))
 
 def MetrosaYardas():
     metros=int(input("Cuantos metros quieres convertir a yardas?: "))
