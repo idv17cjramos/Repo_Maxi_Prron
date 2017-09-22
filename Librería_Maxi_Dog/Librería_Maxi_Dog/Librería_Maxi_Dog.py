@@ -1,6 +1,7 @@
 #Bienvenido Saint Yeipi
 #Importamos el tiempo...
 import time
+import sys
 
 #Presentacion
 
@@ -58,10 +59,10 @@ def resta():
 def multiplicacion():
     multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
     multi = [int(x) for x in multi.split (" ") ]
-    total = 0
+    total = 1
     for numero in multi:
         total *= numero
-    print ("El resultado es: \n", total) #Problema con el acumulador, se queda en 0
+    print ("El resultado es: \n", total) #Que pendejos multiplicaron por 0
   
 def division():
     x  =  int(input("Escribe el dividendo: "))
@@ -69,6 +70,12 @@ def division():
     print ("El resultado es: ")
     print (x/y)
 
+def modulo():
+    x  =  int(input("Escribe el dividendo: "))
+    y  =  int(input("Escribe el divisor: "))
+    print ("El resultado es: ")
+    print (x%y)
+    
 def metrosaPulgadas():
     metros = float(input("Escribe la cantidad de metros a convertir: "))
     pulgadas = 39.3701
@@ -80,6 +87,22 @@ def pulgadasaMetros():
     metros = 0.0254
     print ("El resultado es: ")
     print (pulgadas*metros)
+
+def raiz():
+    cuadrada = 2
+    numeroBase = int(input("Escriba el número que quiera radicar: "))
+    exponente = int(input("Escriba la radical a la que lo quiera radicalizar: "))
+    if (exponente == "0"):
+        print ("Radicaste a cero, tu resultado es un error")
+        sys.exit()
+    if(exponente<0):
+        print (int(numeroBase) ** abs(1/exponente) + "j" +"\n Tu numero es imaginario")
+    try:
+        print (float(numeroBase) ** float(1/exponente))
+    except (ValueError):
+        print("No introdujiste radical, se sacara raiz cuadrada.")
+        print("El resultado es: ")
+        print(float(numeroBase) ** float(1/cuadrada))
 
 def potencia():
     alCuadrado = 2
@@ -117,6 +140,8 @@ elif (operacion == "resta" ):
     resta()
 elif(operacion=="potencia"):
     potencia()
+elif(operacion=="raiz"):
+    raiz()
 elif (operacion == "metros a pulgadas" ):
     metrosaPulgadas()
 elif (operacion == "pulgadas a metros" ):
@@ -125,6 +150,8 @@ elif (operacion == "metros a yardas"):
     metrosaYardas()
 elif (operacion=="yardas a metros"):
     yardasaMetros()
+elif (operacion == "modulo"):
+    modulo()
 
 #Easter egg
 elif (operacion == "guebito con cacsun" ):
