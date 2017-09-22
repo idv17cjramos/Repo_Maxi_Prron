@@ -90,19 +90,21 @@ def pulgadasaMetros():
 
 def raiz():
     cuadrada = 2
-    numeroBase = int(input("Escriba el número que quiera radicar: "))
-    exponente = int(input("Escriba la radical a la que lo quiera radicalizar: "))
+    numeroBase = float(input("Escriba el número que quiera radicar: "))
+    exponente = float(input("Escriba la radical a la que lo quiera radicalizar: "))
     if (exponente == "0"):
         print ("Radicaste a cero, tu resultado es un error")
         sys.exit()
-    if(exponente<0):
-        print (int(numeroBase) ** abs(1/exponente) + "j" +"\n Tu numero es imaginario")
+    resultado = abs(numeroBase) ** (1/exponente)
+    if(numeroBase<0):
+        print (str(resultado) + "i" +"\nTu numero es imaginario")
+        return
     try:
-        print (float(numeroBase) ** float(1/exponente))
+        print (str(numeroBase ** (1/exponente)))
     except (ValueError):
         print("No introdujiste radical, se sacara raiz cuadrada.")
         print("El resultado es: ")
-        print(float(numeroBase) ** float(1/cuadrada))
+        print(str(numeroBase ** (1/cuadrada)))
 
 def potencia():
     alCuadrado = 2
