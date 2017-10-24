@@ -7,25 +7,26 @@ import sys
 
 print ("Bienvenido a la librería Maxi Dog")
 print ("-"*80+  "\n")
-print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el nombre de la función y después aprieta enter\n")
+print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el numero de la función y después aprieta enter\n")
  
-print("Suma")
-print("Resta")
-print("Multiplicación")
-print("División")
-print("Potencia")
-print("Raíz")
-print("Módulo")
-print("Binario a hexadecimal")
-print("Hexadecimal a binario")
-print("Decimal a hexadecimal")
-print("Hexadecimal a decimal")
-print("Binario a decimal")
-print("Decimal a binario")
-print("Metros a yardas")
-print("Yardas a metros")
-print("Metros a pulgadas")
-print("Pulgadas a metros")
+print("1.-Suma")#
+print("2.-Resta")#
+print("3.-Multiplicación")#
+print("4.-División")#
+print("5.-Potencia")#
+print("6.-Raíz")#
+print("7.-Módulo")#
+print("8.-Binario a hexadecimal")
+print("9.-Hexadecimal a binario")
+print("10.-Decimal a hexadecimal")
+print("11.-Hexadecimal a decimal")
+print("12.-Binario a decimal")
+print("13.-Decimal a binario")
+print("14.-Metros a yardas")#
+print("15.-Yardas a metros")#
+print("16.-Metros a pulgadas")#
+print("17.-Pulgadas a metros")#
+print("18.-Calcular Indice de Masa Corporal")#
 print ("-"*80+  "\n")
 
 operacion=input("Que operacion quieres realizar? ")
@@ -139,31 +140,61 @@ def yardasaMetros():
     print ("El resultado es: ")
     print (yardas*metros)
 
+def IMC():
+    sexo=input("Eres mujer u hombre? ")
+    peso=float(input("Introduce tu peso en kilos: "))
+    estatura=float(input("Introduce tu estatura en metros: "))
+    sexo.lower()
+    imc=(peso/(estatura)**2)
+    print (str(imc))
+    if (imc<18.5):
+        print ("Tienes peso abjo")
+    elif (imc>=18.5 and imc<25):
+        print ("Tienes peso ideal")
+    elif (imc>=25.0 and imc<30):
+        print ("Tienes Sobrepeso")
+    elif (imc>=30 and imc<35):
+        print ("Tienes obesidad")
+    elif (imc>=35 and imc<40):
+        print ("Tienes Obesidad 2")
+    elif (imc<=40):
+        print ("Tienes obesidad mórbida")
+    if(sexo=="hombre"):
+        estatura=estatura*100
+        ideal=(estatura-100)*0.90
+        print ("Tu peso ideal es " + str(ideal))
+    elif(sexo=="mujer"):
+        estatura=estatura*100
+        ideal=(estatura-100)*0.85
+        print ("Tu peso ideal es " + str(ideal))
+
 #Menu
-if (operacion== "suma"):
+if (operacion== "1"):
     suma()
-elif(operacion=="multiplicacion"):
-    multiplicacion()
-elif (operacion == "division" ):
-    division()
-elif (operacion == "resta" ):
+elif(operacion=="2"):
     resta()
-elif (operacion == "potencia" ):
-    potencia()
-elif(operacion=="potencia"):
-    potencia()
-elif(operacion=="raiz"):
-    raiz()
-elif (operacion == "metros a pulgadas" ):
-    metrosaPulgadas()
-elif (operacion == "pulgadas a metros" ):
-    pulgadasaMetros()
-elif (operacion == "metros a yardas"):
-    metrosaYardas()
-elif (operacion=="yardas a metros"):
-    yardasaMetros()
-elif (operacion == "modulo"):
+elif (operacion == "3" ):
+    multiplicacion()
+elif (operacion == "4" ):
+    division()
+elif (operacion == "5" ):
     modulo()
+elif(operacion=="6"):
+    metrosaPulgadas()
+elif(operacion=="7"):
+    pulgadasaMetros()
+elif (operacion == "8" ):
+    raiz()
+elif (operacion == "9" ):
+    potencia()
+elif (operacion == "10"):
+    metrosaYardas()
+elif (operacion=="11"):
+    yardasaMetros()
+elif (operacion == "12"):
+    print ("tu jefa")
+elif (operacion== "18"):
+    IMC()
 
 
 #Easter egg
