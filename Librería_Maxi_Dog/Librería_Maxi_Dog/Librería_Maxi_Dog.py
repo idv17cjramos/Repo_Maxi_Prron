@@ -169,17 +169,23 @@ def IMC():
         print ("Tu peso ideal es " + str(ideal))
 
 def decimalaBinario():
-    numero = (input("Ingresa el número que quieres convertir a binario: "))
-    numero2 = int(numero)
+    numero = int(input("Ingresa el número que quieres convertir a binario: "))
     listaBinarial = []
-    indice=-1
-    while(numero2>0):
-        residuo=numero2%2
+    while(numero>0):
+        residuo=numero%2
         listaBinarial.append(residuo)
-        numero2 = numero2//2
+        numero = numero//2
     listaReversa = reversed(listaBinarial)
     print("Tu número binario es: ")
     print(*listaReversa)
+
+def binarioaDecimal():
+    binario = input("Ingresa el número binario a convertir a decimal: ")
+    decimal = 0
+    for x in binario:
+        decimal = decimal*2 + int(x)
+    print ("Tu número en decimal es: \n" + str(decimal))
+
 
 
 #Menu
@@ -205,12 +211,12 @@ elif (operacion == "10"):
     metrosaYardas()
 elif (operacion=="11"):
     yardasaMetros()
-elif (operacion == "12"):
-    print ("tu jefa")
 elif (operacion== "18"):
     IMC()
 elif (operacion == "13"):
     decimalaBinario()
+elif (operacion == "12"):
+    binarioaDecimal()
 
 
 #Easter egg
