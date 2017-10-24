@@ -168,6 +168,20 @@ def IMC():
         ideal=(estatura-100)*0.85
         print ("Tu peso ideal es " + str(ideal))
 
+def decimalaBinario():
+    numero = (input("Ingresa el número que quieres convertir a binario: "))
+    numero2 = int(numero)
+    listaBinarial = []
+    indice=-1
+    while(numero2>0):
+        residuo=numero2%2
+        listaBinarial.append(residuo)
+        numero2 = numero2//2
+    listaReversa = reversed(listaBinarial)
+    print("Tu número binario es: ")
+    print(*listaReversa)
+
+
 #Menu
 if (operacion== "1"):
     suma()
@@ -195,6 +209,8 @@ elif (operacion == "12"):
     print ("tu jefa")
 elif (operacion== "18"):
     IMC()
+elif (operacion == "13"):
+    decimalaBinario()
 
 
 #Easter egg
