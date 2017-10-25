@@ -57,7 +57,7 @@ def multiplicacion():
     total = 1
     for numero in multi:
         total *= numero
-    print ("El resultado es: \n", total) #Que pendejos multiplicaron por 0
+    print ("El resultado es: \n", total) #Que pendejos multiplicaron por 0, apendejamiento momentaneo :C
  
 def division():
     x  =  int(input("Escribe el dividendo: "))
@@ -70,18 +70,6 @@ def modulo():
     y  =  int(input("Escribe el divisor: "))
     print ("El resultado es: ")
     print (x%y)
-   
-def metrosaPulgadas():
-    metros = float(input("Escribe la cantidad de metros a convertir: "))
-    pulgadas = 39.3701
-    print ("El resultado es: ")
-    print (metros*pulgadas)
- 
-def pulgadasaMetros():
-    pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
-    metros = 0.0254
-    print ("El resultado es: ")
-    print (pulgadas*metros)
  
 def raiz():
     cuadrada = 2
@@ -132,6 +120,18 @@ def yardasaMetros():
     metros = 0.9144
     print ("El resultado es: ")
     print (yardas*metros)
+
+def metrosaPulgadas():
+    metros = float(input("Escribe la cantidad de metros a convertir: "))
+    pulgadas = 39.3701
+    print ("El resultado es: ")
+    print (metros*pulgadas)
+ 
+def pulgadasaMetros():
+    pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
+    metros = 0.0254
+    print ("El resultado es: ")
+    print (pulgadas*metros)
  
 def IMC():
     sexo=input("Eres mujer u hombre? ")
@@ -191,7 +191,7 @@ def numeroprimo():
         print ("Su numero es primo")
     else:
         print ("Su numero no es primo, es tio")
-#Menu
+
 continuar = True
 presentacion()
 while(continuar==True):
@@ -229,6 +229,10 @@ while(continuar==True):
         metrosaYardas()
     elif (operacion == "15"):
         yardasaMetros()
+    elif (operacion == "16"):
+        metrosaPulgadas()
+    elif (operacion == "17"):
+        pulgadasaMetros()
     elif (operacion== "18"):
         IMC()
     elif(operacion=="19"):
