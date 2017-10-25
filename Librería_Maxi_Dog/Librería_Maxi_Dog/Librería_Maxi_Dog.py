@@ -2,7 +2,6 @@
 #Importamos el tiempo...
 import time
 import sys
- 
 #Presentacion
  
 print ("Bienvenido a la librería Maxi Dog")
@@ -28,12 +27,7 @@ print("16.-Metros a pulgadas")#
 print("17.-Pulgadas a metros")#
 print("18.-Calcular Indice de Masa Corporal")#
 print ("-"*80+  "\n")
- 
-operacion=input("Que operacion quieres realizar? ")
- 
-#Conversor a minusculas
-operacion=str.lower(operacion)
- 
+
 #Operaciones
 def suma():
     sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
@@ -189,44 +183,52 @@ def binarioaDecimal():
  
  
 #Menu
-if (operacion== "1"):
-    suma()
-elif(operacion=="2"):
-    resta()
-elif (operacion == "3" ):
-    multiplicacion()
-elif (operacion == "4" ):
-    division()
-elif (operacion == "5" ):
-    modulo()
-elif(operacion=="6"):
-    metrosaPulgadas()
-elif(operacion=="7"):
-    pulgadasaMetros()
-elif (operacion == "8" ):
-    raiz()
-elif (operacion == "9" ):
-    potencia()
-elif (operacion == "14"):
-    metrosaYardas()
-elif (operacion=="11"):
-    yardasaMetros()
-elif (operacion== "18"):
-    IMC()
-elif (operacion == "13"):
-    decimalaBinario()
-elif (operacion == "12"):
-    binarioaDecimal()
-elif(operacion == "10"):
-    decimalaHexadecimal()
- 
- 
-#Easter egg
-elif (operacion == "guebito con cacsun" ):
-    print("mmmmm uma delisia :v")
-    time.sleep(3)
-    print("e.e")
-    time.sleep(2)
-    print("Es neta, vato? >:V")
-    time.sleep(3)
-    print("no, ya enserio, estas reprobado para toda la vida :)")
+continuar = True
+while(continuar==True):
+    #Selector de operacion
+    operacion=input("Que operacion quieres realizar? ")
+    #Conversor a minusculas
+    operacion=str.lower(operacion)
+    if (operacion== "1"):
+        suma()
+    elif(operacion=="2"):
+        resta()
+    elif (operacion == "3" ):
+        multiplicacion()
+    elif (operacion == "4" ):
+        division()
+    elif (operacion == "5" ):
+        modulo()
+    elif(operacion=="6"):
+        metrosaPulgadas()
+    elif(operacion=="7"):
+        pulgadasaMetros()
+    elif (operacion == "8" ):
+        raiz()
+    elif (operacion == "9" ):
+        potencia()
+    elif (operacion == "14"):
+        metrosaYardas()
+    elif (operacion=="11"):
+        yardasaMetros()
+    elif (operacion== "18"):
+        IMC()
+    elif (operacion == "13"):
+        decimalaBinario()
+    elif (operacion == "12"):
+        binarioaDecimal()
+    elif(operacion == "10"):
+        decimalaHexadecimal()
+
+    #Easter egg
+    elif (operacion == "guebito con cacsun" ):
+        print("mmmmm uma delisia :v")
+        time.sleep(3)
+        print("e.e")
+        time.sleep(2)
+        print("Es neta, vato? >:V")
+        time.sleep(3)
+        print("no, ya enserio, estas reprobado para toda la vida :)")
+    pregunta = input('Quieres hacer otra operacion?(escribe "si" o "no")\n')
+    if(pregunta =="no"):
+        continuar=False
