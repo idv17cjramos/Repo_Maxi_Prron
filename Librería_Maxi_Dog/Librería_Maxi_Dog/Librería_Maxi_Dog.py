@@ -192,6 +192,12 @@ def numeroprimo():
     else:
         print ("Su numero no es primo, es tio")
 
+def HexadecimalaDecimal():
+   NumoerAconvertir = input ("introduce el número en Hexadecimal que quieras convertir a decimal: ")
+   Numeroconvertido = int(NumoerAconvertir,16)
+   
+   print ("El número convertido a decimal es: " + str(Numeroconvertido))
+
 continuar = True
 presentacion()
 while(continuar==True):
@@ -218,9 +224,9 @@ while(continuar==True):
     elif (operacion == "9" ):
         potencia()
     elif(operacion == "10"):
-        decimalaHexadecimal()
+        print("esta operacion aun no esta disponible")
     elif (operacion=="11"):
-        yardasaMetros()
+        HexadecimalaDecimal()
     elif (operacion == "12"):
         binarioaDecimal()
     elif (operacion == "13"):
