@@ -133,7 +133,6 @@ def metrosaYardas():
     print ("El resultado es: ")
     print (metros*yardas)
 
-
 def yardasaMetros():
     yardas=float(input("Escribe la cantidad de yardas a convertir: "))
     metros = 0.9144
@@ -188,6 +187,7 @@ def binarioaDecimal():
 
 
 
+
 #Menu
 if (operacion== "1"):
     suma()
@@ -207,7 +207,7 @@ elif (operacion == "8" ):
     raiz()
 elif (operacion == "9" ):
     potencia()
-elif (operacion == "10"):
+elif (operacion == "14"):
     metrosaYardas()
 elif (operacion=="11"):
     yardasaMetros()
@@ -217,6 +217,8 @@ elif (operacion == "13"):
     decimalaBinario()
 elif (operacion == "12"):
     binarioaDecimal()
+elif(operacion == "10"):
+    decimalaHexadecimal()
 
 
 #Easter egg
