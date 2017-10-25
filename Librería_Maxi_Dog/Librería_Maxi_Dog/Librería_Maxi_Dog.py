@@ -2,9 +2,9 @@
 #Importamos el tiempo...
 import time
 import sys
-
+ 
 #Presentacion
-
+ 
 print ("Bienvenido a la librería Maxi Dog")
 print ("-"*80+  "\n")
 print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el numero de la función y después aprieta enter\n")
@@ -28,12 +28,12 @@ print("16.-Metros a pulgadas")#
 print("17.-Pulgadas a metros")#
 print("18.-Calcular Indice de Masa Corporal")#
 print ("-"*80+  "\n")
-
+ 
 operacion=input("Que operacion quieres realizar? ")
-
+ 
 #Conversor a minusculas
 operacion=str.lower(operacion)
-
+ 
 #Operaciones
 def suma():
     sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
@@ -56,7 +56,7 @@ def resta():
         total2 -= numero2
     print ("El resultado es: ")
     print (int(total1) + int(total2))
-
+ 
 def multiplicacion():
     multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
     multi = [int(x) for x in multi.split (" ") ]
@@ -64,31 +64,31 @@ def multiplicacion():
     for numero in multi:
         total *= numero
     print ("El resultado es: \n", total) #Que pendejos multiplicaron por 0
-  
+ 
 def division():
     x  =  int(input("Escribe el dividendo: "))
     y  =  int(input("Escribe el divisor: "))
     print ("El resultado es: ")
     print (x/y)
-
+ 
 def modulo():
     x  =  int(input("Escribe el dividendo: "))
     y  =  int(input("Escribe el divisor: "))
     print ("El resultado es: ")
     print (x%y)
-    
+   
 def metrosaPulgadas():
     metros = float(input("Escribe la cantidad de metros a convertir: "))
     pulgadas = 39.3701
     print ("El resultado es: ")
     print (metros*pulgadas)
-
+ 
 def pulgadasaMetros():
     pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
     metros = 0.0254
     print ("El resultado es: ")
     print (pulgadas*metros)
-
+ 
 def raiz():
     cuadrada = 2
     numeroBase = float(input("Escriba el número que quiera radicar: "))
@@ -106,18 +106,18 @@ def raiz():
         print("No introdujiste radical, se sacara raiz cuadrada.")
         print("El resultado es: ")
         print(str(numeroBase ** (1/cuadrada)))
-
+ 
 def potencia():
     numeroBase = int(input("Escriba el número que quiera elevar: "))
-    exponente = int(input("Escriba el exponente al que lo quiera elevar: ")) 
+    exponente = int(input("Escriba el exponente al que lo quiera elevar: "))
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
     elif(exponente == nul):
         print(numeroBase*numeroBase)
-
+ 
     alCuadrado = 2
     numeroBase = int(input("Escriba el número que quiera elevar: "))
-    exponente = input("Escriba el exponente al que lo quiera elevar: ") 
+    exponente = input("Escriba el exponente al que lo quiera elevar: ")
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
     try:
@@ -126,19 +126,19 @@ def potencia():
         print("No introdujiste exponente, se elevará al cuadrado.")
         print("El resultado es: ")
         print(int(numeroBase) ** int(alCuadrado))
-
+ 
 def metrosaYardas():
     metros=float(input("Escribe la cantidad de metros a convertir: "))
     yardas = 1.09361
     print ("El resultado es: ")
     print (metros*yardas)
-
+ 
 def yardasaMetros():
     yardas=float(input("Escribe la cantidad de yardas a convertir: "))
     metros = 0.9144
     print ("El resultado es: ")
     print (yardas*metros)
-
+ 
 def IMC():
     sexo=input("Eres mujer u hombre? ")
     peso=float(input("Introduce tu peso en kilos: "))
@@ -166,7 +166,7 @@ def IMC():
         estatura=estatura*100
         ideal=(estatura-100)*0.85
         print ("Tu peso ideal es " + str(ideal))
-
+ 
 def decimalaBinario():
     numero = int(input("Ingresa el número que quieres convertir a binario: "))
     listaBinarial = []
@@ -177,17 +177,17 @@ def decimalaBinario():
     listaReversa = reversed(listaBinarial)
     print("Tu número binario es: ")
     print(*listaReversa)
-
+ 
 def binarioaDecimal():
     binario = input("Ingresa el número binario a convertir a decimal: ")
     decimal = 0
     for x in binario:
         decimal = decimal*2 + int(x)
     print ("Tu número en decimal es: \n" + str(decimal))
-
-
-
-
+ 
+ 
+ 
+ 
 #Menu
 if (operacion== "1"):
     suma()
@@ -219,8 +219,8 @@ elif (operacion == "12"):
     binarioaDecimal()
 elif(operacion == "10"):
     decimalaHexadecimal()
-
-
+ 
+ 
 #Easter egg
 elif (operacion == "guebito con cacsun" ):
     print("mmmmm uma delisia :v")
