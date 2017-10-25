@@ -2,33 +2,33 @@
 #Importamos el tiempo...
 import time
 import sys
-#Presentacion
- 
-print ("Bienvenido a la librería Maxi Dog")
-print ("-"*80+  "\n")
-print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el numero de la función y después aprieta enter\n")
- 
-print("1.-Suma")#
-print("2.-Resta")#
-print("3.-Multiplicación")#
-print("4.-División")#
-print("5.-Potencia")#
-print("6.-Raíz")#
-print("7.-Módulo")#
-print("8.-Binario a hexadecimal")
-print("9.-Hexadecimal a binario")
-print("10.-Decimal a hexadecimal")
-print("11.-Hexadecimal a decimal")
-print("12.-Binario a decimal")
-print("13.-Decimal a binario")
-print("14.-Metros a yardas")#
-print("15.-Yardas a metros")#
-print("16.-Metros a pulgadas")#
-print("17.-Pulgadas a metros")#
-print("18.-Calcular Indice de Masa Corporal")#
-print ("-"*80+  "\n")
 
-#Operaciones
+def presentacion(): 
+    print ("Bienvenido a la librería Maxi Dog")
+    print ("-"*80+  "\n")
+    print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el numero de la función y después aprieta enter\n")
+     
+    print(" 1.-Suma")
+    print(" 2.-Resta")
+    print(" 3.-Multiplicación")
+    print(" 4.-División")
+    print(" 5.-Potencia")
+    print(" 6.-Raíz")
+    print(" 7.-Módulo")
+    print(" 8.-Binario a hexadecimal")
+    print(" 9.-Hexadecimal a binario")
+    print("10.-Decimal a hexadecimal")
+    print("11.-Hexadecimal a decimal")
+    print("12.-Binario a decimal")
+    print("13.-Decimal a binario")
+    print("14.-Metros a yardas")
+    print("15.-Yardas a metros")
+    print("16.-Metros a pulgadas")
+    print("17.-Pulgadas a metros")
+    print("18.-Calcular Indice de Masa Corporal")
+    print("19.-Calcular si es numero primo")
+    print ("-"*80+  "\n")
+
 def suma():
     sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
     sumita = [int(x) for x in sumita.split (" ") ]
@@ -179,11 +179,21 @@ def binarioaDecimal():
         decimal = decimal*2 + int(x)
     print ("Tu número en decimal es: \n" + str(decimal))
  
- 
- 
- 
+def numeroprimo():
+    x= int(input("Introduzca un numero entero:"))
+    contador=2
+    esPrimo = True
+    while(contador < x ):
+      if(x % contador == 0):
+        esPrimo = False
+      contador = contador + 1
+    if(esPrimo):
+        print ("Su numero es primo")
+    else:
+        print ("Su numero no es primo, es tio")
 #Menu
 continuar = True
+presentacion()
 while(continuar==True):
     #Selector de operacion
     operacion=input("Que operacion quieres realizar? ")
@@ -207,19 +217,22 @@ while(continuar==True):
         raiz()
     elif (operacion == "9" ):
         potencia()
+    elif(operacion == "10"):
+        decimalaHexadecimal()
+    elif (operacion=="11"):
+        yardasaMetros()
+    elif (operacion == "12"):
+        binarioaDecimal()
+    elif (operacion == "13"):
+        decimalaBinario()
     elif (operacion == "14"):
         metrosaYardas()
-    elif (operacion=="11"):
+    elif (operacion == "15"):
         yardasaMetros()
     elif (operacion== "18"):
         IMC()
-    elif (operacion == "13"):
-        decimalaBinario()
-    elif (operacion == "12"):
-        binarioaDecimal()
-    elif(operacion == "10"):
-        decimalaHexadecimal()
-
+    elif(operacion=="19"):
+        numeroprimo()
     #Easter egg
     elif (operacion == "guebito con cacsun" ):
         print("mmmmm uma delisia :v")
@@ -230,5 +243,6 @@ while(continuar==True):
         time.sleep(3)
         print("no, ya enserio, estas reprobado para toda la vida :)")
     pregunta = input('Quieres hacer otra operacion?(escribe "si" o "no")\n')
+    presentacion()
     if(pregunta =="no"):
         continuar=False
