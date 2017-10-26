@@ -13,11 +13,11 @@ def presentacion():
     print(" 2.-Resta")
     print(" 3.-Multiplicación")
     print(" 4.-División")
-    print(" 5.-Potencia")
-    print(" 6.-Raíz")
-    print(" 7.-Módulo")
-    print(" 8.-Binario a hexadecimal")
-    print(" 9.-Hexadecimal a binario")
+    print(" 5.-Modulo")
+    print(" 6.-Metros a pulgadas")
+    print(" 7.-Pulgadas a metros")
+    print(" 8.-Raiz")
+    print(" 9.-Potencia")
     print("10.-Decimal a hexadecimal")
     print("11.-Hexadecimal a decimal")
     print("12.-Binario a decimal")
@@ -92,16 +92,11 @@ def raiz():
         print(str(numeroBase ** (1/cuadrada)))
  
 def potencia():
-    numeroBase = int(input("Escriba el número que quiera elevar: "))
-    exponente = int(input("Escriba el exponente al que lo quiera elevar: "))
+    numeroBase = input("Escriba el número que quiera elevar: ")
+    exponente = input("Escriba el exponente al que lo quiera elevar: ")
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
-    elif(exponente == nul):
-        print(numeroBase*numeroBase)
- 
     alCuadrado = 2
-    numeroBase = int(input("Escriba el número que quiera elevar: "))
-    exponente = input("Escriba el exponente al que lo quiera elevar: ")
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
     try:
