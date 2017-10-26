@@ -394,6 +394,7 @@ def guebitohKonCacsum():
 continuar = True
 presentacion()
 
+
 while(continuar==True):
     #Selector de operacion
     operacion=input("Que operacion quieres realizar? ")
@@ -454,4 +455,8 @@ while(continuar==True):
     pregunta = input('Quieres hacer otra operacion?(escribe "si" o "no")\n')
     presentacion()
     if(pregunta =="no"):
-        continuar=False
+        print("Gracias por usar la calculadora :D")
+        time.sleep(2)
+        sys.exit()
+
+       
