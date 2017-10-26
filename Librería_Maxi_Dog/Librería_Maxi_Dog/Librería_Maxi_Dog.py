@@ -386,8 +386,10 @@ def serpientesyescaleras():
             turno = 0
 
 def guebitohKonCacsum():
+    print("Guebitoh Kon Cacsum...")
+    time.sleep(2)
     print("mmmmm uma delisia :v")
-    time.sleep(3)
+    time.sleep(2)
     print("e.e")
     time.sleep(2)
     print("Es neta, vato? >:V")
