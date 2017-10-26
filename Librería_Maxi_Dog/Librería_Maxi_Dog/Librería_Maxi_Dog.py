@@ -2,6 +2,7 @@
 #Importamos el tiempo...
 import time
 import sys
+import random
 
 def presentacion(): 
     print ("Bienvenido a la librería Maxi Dog")
@@ -27,6 +28,7 @@ def presentacion():
     print("17.-Pulgadas a metros")
     print("18.-Calcular Indice de Masa Corporal")
     print("19.-Calcular si es numero primo")
+    print("20.-Extras")
     print ("-"*80+  "\n")
 
 def suma():
@@ -198,8 +200,203 @@ def HexadecimalaDecimal():
    
    print ("El número convertido a decimal es: " + str(Numeroconvertido))
 
+def ahorcado():
+    frases = {"InFamous":["no pidas una vida mas facil pide ser mas fuerte","todo hombre es responsable del bien que no ha hecho","no pienso hacer esto cada vez para que tu mojes"],
+              "Terminator":["i will be back","hasta la vista baby","estoy viejo no obsoleto"],
+              "Star Wars":["luke soy tu padre","siempre en movimiento esta el futuro","no lo intentes hazlo"],          
+              "Harry Potter":["para una mente bien preparada la muerte es solo la siguiente gran aventura","es hora de elegir entre lo que es facil y lo que es correcto","la gente encuentra mas facil perdonar a los demas por equivocarse que por acertar"],
+              "God Of War":["la medida de un hombre es lo que hace con el poder","la esperanza es para los debiles pandora","en la oscuridad el fuego de la esperanza nos liberara"]}
+    
+    categoria = random.choice(list(frases.keys()))
+    frase = random.choice(frases[categoria])
+    
+    dibujo = ['''
+    
+      +---+
+      |   |
+          |
+          |
+          |
+          |
+    =========''', '''
+    
+      +---+
+      |   |
+      O   |
+          |
+          |
+          |
+    =========''', '''
+    
+      +---+
+      |   |
+      O   |
+      |   |
+          |
+          |
+    =========''', '''
+    
+      +---+
+      |   |
+      O   |
+     /|   |
+          |
+          |
+    =========''', '''
+    
+      +---+
+      |   |
+      O   |
+     /|\  |
+          |
+          |
+    =========''', '''
+    
+      +---+
+      |   |
+      O   |
+     /|\  |
+     /    |
+          |
+    =========''', '''
+    
+      +---+
+      |   |
+      O   |
+     /|\  |
+     / \  |
+          |
+    =========''']
+    palabra = list(frase)
+    vacio = "_"*len(frase)
+    correctas = list(vacio)
+    errores = 0
+    turnos = 0
+    flag = True
+    perder = False
+    ganar = False
+    print("vamos a jugar con frases de " + str(categoria))
+
+    while(ganar == False and perder == False):
+        print(dibujo[errores])
+        print(*correctas)
+        intento = input("Ingresa una letra y averigua si esta dentro de la palabra secreta: ")
+        if (intento in correctas):
+            print("Ya usaste esa letra!")
+            flag = True
+        contador = 0
+        while (contador < len(palabra)):
+            espacios = " "
+            if (espacios in palabra[contador]):
+               correctas[contador] = espacios
+            if (intento in palabra[contador]):
+                correctas[contador] = intento
+            contador = contador + 1
+            if (contador == len(palabra) and flag == False):
+                print("correcto!")
+        if(intento not in palabra):
+            print("No esta!")
+            errores = errores + 1
+        if (errores == 7):
+            print ("Perdiste, moriras agonizantemente")
+            print("PD: La palabra era " + str(frase))
+            perder = True
+        if (correctas == palabra):
+            print(*correctas)
+            print("Eres una chingoneria, le atinaste!")
+            print("PD: Y solo te tomo " +str(turnos) + " intentos!")
+            ganar = True
+        turnos += 1
+
+def serpientesyescaleras():
+    tiros = 0
+    pasos = 0
+    indice = 0
+    turno = 0
+    logro1 = False
+    logro2 = True
+    ganar = False
+    
+    portales =             (1,38,
+                            4,14,
+                            9,31,
+                            17,7,
+                            21,42,
+                            28,84,
+                            51,67,
+                            54,34,
+                            62,19,
+                            64,60,
+                            72,91,
+                            80,99,
+                            93,73,
+                            95,75,
+                            98,79)
+    posiciones = []
+    nombres = []
+    
+    n = int(input("Cuantos jugadores habra? "))
+    
+    while (indice < n):
+        print("Cual es el nombre del jugador " + str(indice + 1) + "? ")
+        nu = input()
+        posiciones.append(0)
+        nombres.append(str(nu))
+        indice = indice + 1
+    
+    while (ganar == False):
+        print("Es turno de " + nombres[turno])
+        input ("Presiona una tecla para lanzar los dados: ")
+        dado1 = random.randint(1,6)
+        dado2 = random.randint(1,6)
+        tiros+=1
+        print ("Dado 1: " +str( dado1) + "    Dado 2: "+str(dado2)+"    Suma: "+ str(dado1+dado2))
+        print ("Avanzas de la posicion " +str(posiciones[turno])) 
+        posiciones[turno] = posiciones[turno]+dado1+dado2
+        pasos = pasos+dado1+dado2
+        if(posiciones[turno]>100):
+            deMas=posiciones[turno] -100
+            posiciones[turno] = 100 - deMas 
+        SyEi= 0
+        while(SyEi < len(portales)):
+            if(portales[SyEi] == posiciones[turno]):
+                if(portales[SyEi] < portales[SyEi+1]):
+                    print("Subes por una escalera de la posicion " + str (posiciones[turno]) +" a la posicion"+ 
+                    str (portales[SyEi]))
+                else:
+                    print("Caes por una serpiente de la posicion " + str(portales[SyEi]) + " a la posicion" + 
+                    str(portales[SyEi + 1]))
+                    logro2 = False
+                posiciones[turno] = portales[SyEi + 1]
+            SyEi = SyEi + 2
+    
+    
+        print ("A la posicion "+str(posiciones[turno]))
+        if (dado1 == 1 and dado2 == 1 and logro1 == False):
+            print ("Logro desbloqueado: PAR DE ASES!")
+            logro1 = True
+        if(posiciones[turno] == 100):
+            ganar = True
+            if (logro2 == True):
+                print ("Domador de serpientes!")
+            print (nombres[turno] + "\nTiraste " + str(tiros) + " veces"  )
+            print ("Avanzaste " + str(pasos) + " pasos")
+        turno = turno + 1
+        if (turno >= n):
+            turno = 0
+
+def guebitohKonCacsum():
+    print("mmmmm uma delisia :v")
+    time.sleep(3)
+    print("e.e")
+    time.sleep(2)
+    print("Es neta, vato? >:V")
+    time.sleep(3)
+    print("no, ya enserio, estas reprobado para toda la vida :)")
+
 continuar = True
 presentacion()
+
 while(continuar==True):
     #Selector de operacion
     operacion=input("Que operacion quieres realizar? ")
@@ -239,19 +436,24 @@ while(continuar==True):
         metrosaPulgadas()
     elif (operacion == "17"):
         pulgadasaMetros()
-    elif (operacion== "18"):
+    elif (operacion == "18"):
         IMC()
-    elif(operacion=="19"):
+    elif(operacion =="19"):
         numeroprimo()
-    #Easter egg
-    elif (operacion == "guebito con cacsun" ):
-        print("mmmmm uma delisia :v")
-        time.sleep(3)
-        print("e.e")
-        time.sleep(2)
-        print("Es neta, vato? >:V")
-        time.sleep(3)
-        print("no, ya enserio, estas reprobado para toda la vida :)")
+    elif(operacion =="20"):
+        print("1.-Ahorcado")
+        print("2.-Serpientes y Escaleras")
+        print("?.-Secreto")
+
+        easter = input("Que quieres jugar?\n")
+        easter = str.lower(easter)
+        if(easter == "1"):
+            ahorcado()
+        elif(easter == "2"):
+            serpientesyescaleras()
+        else:
+            guebitohKonCacsum()
+
     pregunta = input('Quieres hacer otra operacion?(escribe "si" o "no")\n')
     presentacion()
     if(pregunta =="no"):
