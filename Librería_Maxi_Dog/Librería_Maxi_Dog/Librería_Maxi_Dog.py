@@ -5,10 +5,10 @@ import sys
 import random
 
 def presentacion(): 
+    #Texto de bienvenida para el usuario, contiene todas las operaciones de la calculadora numeradas
     print ("Bienvenido a la librería Maxi Dog")
     print ("-"*80+  "\n")
-    print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el numero de la función y después aprieta enter\n")
-     
+    print ("¿Qué es lo que deseas hacer el día de hoy? \n\nIntroduce el numero de la función y después aprieta enter\n") 
     print(" 1.-Suma")
     print(" 2.-Resta")
     print(" 3.-Multiplicación")
@@ -32,89 +32,119 @@ def presentacion():
     print ("-"*80+  "\n")
 
 def suma():
+    #Solicita un input del usuario
     sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
+    #Crea una lista en base a los numeros introducidos por el usuario, separandolos por un espacio
     sumita = [int(x) for x in sumita.split (" ") ]
+    #Suma todos los elementos de la lista "sumita"
     total = 0
     for numero in sumita:
         total += numero
-    print ("El resultado es: \n",total)
+    #Imprime el resultado de la suma
+    print ("El resultado es:\n",total)
  
 def resta():
+    #Solicita un los minuendos, los convierte en una lista separando por un espacio y suma todos los elementos de la lista
     restita1 = input("Introduce minuendos (Separados por un espacio): ")
     restita1 = [int(x) for x in restita1.split (" ") ]
     total1 = 0
     for numero1 in restita1:
         total1 += numero1
+    #Solicita los sustraendos, los convierte en una lista separando por un espacio y resta todos los elementos de la lista
     restita2 = input("Introduce sustraendos(Separados por un espacio): ")
     restita2 = [int(x) for x in restita2.split (" ") ]
     total2 = 0
     for numero2 in restita2:
         total2 -= numero2
+    #Suma los minuendos y los sustraendos e imprime el resultado
     print ("El resultado es: ")
     print (int(total1) + int(total2))
  
 def multiplicacion():
+    #Solicita los numeros a multiplicar
     multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
+    #Crea una lista de los numeros introducidos, separandolos por espacios
     multi = [int(x) for x in multi.split (" ") ]
+    #Multiplica en orden los elementos de la lista en forma de producto acumulado e imprime el resultado
     total = 1
     for numero in multi:
         total *= numero
-    print ("El resultado es: \n", total) #Que pendejos multiplicaron por 0, apendejamiento momentaneo :C
- 
+    print ("El resultado es: \n", total) 
+
 def division():
+    #Solicita el dividendo
     x  =  int(input("Escribe el dividendo: "))
+    #Solicita el divisor
     y  =  int(input("Escribe el divisor: "))
+    #divide el dividendo entre el dividor e imprime el resultado
     print ("El resultado es: ")
     print (x/y)
  
 def modulo():
+    #Solicita el dividendo
     x  =  int(input("Escribe el dividendo: "))
+    #Solicita el divisor
     y  =  int(input("Escribe el divisor: "))
+    #divide el dividendo entre el divisor e imprime el residuo
     print ("El resultado es: ")
     print (x%y)
  
 def raiz():
     cuadrada = 2
+    #Solicita el numero base y el exponente
     numeroBase = float(input("Escriba el número que quiera radicar: "))
     exponente = float(input("Escriba la radical a la que lo quiera radicalizar: "))
+    #Si el exponente es igual a 0 lanza un mensaje de error y sales de la operacion
     if (exponente == "0"):
         print ("Radicaste a cero, tu resultado es un error")
         sys.exit()
+    #Eleva el valor absoluto del numero base a la potencia de la fracción 1/exponente
     resultado = abs(numeroBase) ** (1/exponente)
+    #Si el numero base es negativo imprime el resultado y notifica que el resultado es un numero imaginario
     if(numeroBase<0):
         print (str(resultado) + "i" +"\nTu numero es imaginario")
         return
+    #Imprime el resultado
     try:
         print (str(numeroBase ** (1/exponente)))
+    #Si no se introdujo ningún exponente, se toma el 2 como valor por defecto, se notifica al usuario y se imprime el resultado
     except (ValueError):
         print("No introdujiste radical, se sacara raiz cuadrada.")
         print("El resultado es: ")
         print(str(numeroBase ** (1/cuadrada)))
  
 def potencia():
+    #Solicita el numero base y el exponente
     numeroBase = input("Escriba el número que quiera elevar: ")
     exponente = input("Escriba el exponente al que lo quiera elevar: ")
+    #Al elevar a la 0 el resultado será 1
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
     alCuadrado = 2
-    if (exponente == 0):
-        print ("Elevaste a cero, tu resultado es 1")
+    #Imprime el resultado
     try:
         print (int(numeroBase) ** int(exponente))
+    #Si no se introdujo un exponente se toma el 2 como valor por defecto, se notifica al usuario y se imprime el resultado
     except (ValueError):
         print("No introdujiste exponente, se elevará al cuadrado.")
         print("El resultado es: ")
         print(int(numeroBase) ** int(alCuadrado))
  
 def metrosaYardas():
+    #Se solicitan al usuario los metros a convertir
     metros=float(input("Escribe la cantidad de metros a convertir: "))
+    #Esta es la equivalencia de yardas por metro
     yardas = 1.09361
+    #Se multiplican los metros por su equivalencia en yardas y se imprime el resultado
     print ("El resultado es: ")
     print (metros*yardas)
  
 def yardasaMetros():
+    #Se solicitan al usuario los yardas a convertir
     yardas=float(input("Escribe la cantidad de yardas a convertir: "))
+    #Esta es la equivalencia en metros por yarda
     metros = 0.9144
+    #Se multiplican las yardas por su equivalencia en metros y se imprime el resultado
     print ("El resultado es: ")
     print (yardas*metros)
 
