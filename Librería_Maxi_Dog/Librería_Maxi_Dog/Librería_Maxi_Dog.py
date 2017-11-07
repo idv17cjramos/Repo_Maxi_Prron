@@ -166,7 +166,7 @@ def IMC():
     estatura=float(input("Introduce tu estatura en metros: "))
     sexo.lower()
     imc=(peso/(estatura)**2)
-    print (str(imc))
+    print ("Tu indice de masa cormporal es: " + str(imc))
     if (imc<18.5):
         print ("Tienes peso abjo")
     elif (imc>=18.5 and imc<25):
@@ -386,10 +386,10 @@ def serpientesyescaleras():
         while(SyEi < len(portales)):
             if(portales[SyEi] == posiciones[turno]):
                 if(portales[SyEi] < portales[SyEi+1]):
-                    print("Subes por una escalera de la posicion " + str (posiciones[turno]) +" a la posicion"+ 
+                    print("Subes por una escalera de la posicion " + str (posiciones[turno]) +" a la posicion "+ 
                     str (portales[SyEi]))
                 else:
-                    print("Caes por una serpiente de la posicion " + str(portales[SyEi]) + " a la posicion" + 
+                    print("Caes por una serpiente de la posicion " + str(portales[turno]) + " a la posicion " + 
                     str(portales[SyEi + 1]))
                     logro2 = False
                 posiciones[turno] = portales[SyEi + 1]
