@@ -149,26 +149,36 @@ def yardasaMetros():
     print (yardas*metros)
 
 def metrosaPulgadas():
+    #Se solicita al usuario la cantidad de metros
     metros = float(input("Escribe la cantidad de metros a convertir: "))
+    #Equivalencia de pulgadas en un metro
     pulgadas = 39.3701
+    #Se imprime el resultado y se multiplica pulgadas(que es valor continuo) por metros(que es la cantidad que se le pide al usuario)
     print ("El resultado es: ")
     print (metros*pulgadas)
  
 def pulgadasaMetros():
+    #Se solicita al usuario la cantidad de pulgadas
     pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
+    #Equivalencia de metrso en una pulgada
     metros = 0.0254
+    #Se imprime el resultado y se multiplica metros(que es valor continuo) por pulgadas(que es la cantidad que se le pide al usuario)
     print ("El resultado es: ")
     print (pulgadas*metros)
  
 def IMC():
+    #Se le pide al usuario que meta su sexo, peso y estatura.
     sexo=input("Eres mujer u hombre? ")
     peso=float(input("Introduce tu peso en kilos: "))
     estatura=float(input("Introduce tu estatura en metros: "))
+    # Sexo se pasa a minúsculas
     sexo.lower()
+    #Se calcula el IMC con la fórumla y se imprime la cantidad del índice de masas corporal.
     imc=(peso/(estatura)**2)
     print ("Tu indice de masa cormporal es: " + str(imc))
+    #Se empiezan a hacer comparaciones del IMC obtenido con los valores "sanos" del IMC. Se imprime alguno de los casos
     if (imc<18.5):
-        print ("Tienes peso abjo")
+        print ("Tienes peso bajo")
     elif (imc>=18.5 and imc<25):
         print ("Tienes peso ideal")
     elif (imc>=25.0 and imc<30):
@@ -179,6 +189,8 @@ def IMC():
         print ("Tienes Obesidad 2")
     elif (imc<=40):
         print ("Tienes obesidad mórbida")
+    #Se compara el input del usuario para saber si es hombre o mujer, con eso se elige una operación, se calcula el peso ideal del usuario
+    # Y se imprime el resultado.
     if(sexo=="hombre"):
         estatura=estatura*100
         ideal=(estatura-100)*0.90
@@ -189,33 +201,49 @@ def IMC():
         print ("Tu peso ideal es " + str(ideal))
  
 def decimalaBinario():
+    #Se le pide al usuario que ingrese el número que quiere convertir a binario.
     numero = int(input("Ingresa el número que quieres convertir a binario: "))
     listaBinarial = []
+    #Mientras el input sea mayor a cero, se hace el siguiente bucle
     while(numero>0):
+        #Calcula el módulo del input
         residuo=numero%2
+        #Mete el input en una lista
         listaBinarial.append(residuo)
+        #Divide input entre 2
         numero = numero//2
+    #Reacomoda la lista de atrás hacia adelante
     listaReversa = reversed(listaBinarial)
+    #Imprime lista al revés como el número binario.
     print("Tu número binario es: ")
     print(*listaReversa)
  
 def binarioaDecimal():
+    #Usuario mete el número binario que va a convertir a decimal
     binario = input("Ingresa el número binario a convertir a decimal: ")
+    #Se crea variable decimal, la cual nos ayudará en el proceso de conversión.
     decimal = 0
+    
     for x in binario:
         decimal = decimal*2 + int(x)
     print ("Tu número en decimal es: \n" + str(decimal))
  
 def numeroprimo():
+    #Usuario introduce número que quiere saber si es primo
     x= int(input("Introduzca un numero entero:"))
     contador=2
+    #Bandera de primo es igual a verdadero
     esPrimo = True
+    #Mientras el contador sea menor a x(x siendo el input del número)
     while(contador < x ):
+      Si 
       if(x % contador == 0):
         esPrimo = False
       contador = contador + 1
+    #Si la 
     if(esPrimo):
         print ("Su numero es primo")
+    #Chistorete
     else:
         print ("Su numero no es primo, es tio")
 
@@ -338,6 +366,23 @@ def ahorcado():
             print("PD: Y solo te tomo " +str(turnos) + " intentos!")
             ganar = True
         turnos += 1
+
+def PrimosEnRango():
+    menor= int(input("Introduzca el primer numero del rango: "))
+    mayor=int(input("Introduzca el ultimo numero del rango: "))
+    while (menor<=mayor):
+        numeros=[]
+        mayor+=1
+    #contador=2
+    #esPrimo = True
+    #while(contador < x ):
+    #  if(x % contador == 0):
+    #    esPrimo = False
+    #  contador = contador + 1
+    #if(esPrimo):
+    #    print ("Su numero es primo")
+    #else:
+    #    print ("Su numero no es primo, es tio")
 
 def serpientesyescaleras():
     tiros = 0
@@ -493,6 +538,8 @@ while(continuar==True):
     if(pregunta =="no"):
         print("Gracias por usar la calculadora :D")
         time.sleep(2)
+        print("Te queremos ieipi, no nos repruebes de por vida D:")
+        time.sleep(1)
         sys.exit()
 
-       
+
