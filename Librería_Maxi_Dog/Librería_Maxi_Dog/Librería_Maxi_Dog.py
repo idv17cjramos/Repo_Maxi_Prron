@@ -225,6 +225,12 @@ def HexadecimalaDecimal():
    
    print ("El número convertido a decimal es: " + str(Numeroconvertido))
 
+def decimalaHexadecimal():
+    numero = int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))
+    if numero <= 16:
+        return numero
+    elif numero > 16:
+
 def ahorcado():
     frases = {"InFamous":["no pidas una vida mas facil pide ser mas fuerte","todo hombre es responsable del bien que no ha hecho","no pienso hacer esto cada vez para que tu mojes"],
               "Terminator":["i will be back","hasta la vista baby","estoy viejo no obsoleto"],
