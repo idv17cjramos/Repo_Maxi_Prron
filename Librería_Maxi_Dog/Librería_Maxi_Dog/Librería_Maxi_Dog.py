@@ -254,10 +254,7 @@ def HexadecimalaDecimal():
    print ("El número convertido a decimal es: " + str(Numeroconvertido))
 
 def decimalaHexadecimal():
-    numero = int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))
-    if numero <= 16:
-        return numero
-    elif numero > 16:
+    n = int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))             
 
 def ahorcado():
     frases = {"InFamous":["no pidas una vida mas facil pide ser mas fuerte","todo hombre es responsable del bien que no ha hecho","no pienso hacer esto cada vez para que tu mojes"],
@@ -481,6 +478,8 @@ while(continuar==True):
     operacion=input("Que operacion quieres realizar? ")
     #Conversor a minusculas
     operacion=str.lower(operacion)
+    
+    #Menu, el usuairo mete el número de la operación a realizar, después se llama a la función y se hizo la magia.
     if (operacion== "1"):
         suma()
     elif(operacion=="2"):
@@ -500,7 +499,7 @@ while(continuar==True):
     elif (operacion == "9" ):
         potencia()
     elif(operacion == "10"):
-        print("esta operacion aun no esta disponible")
+        decimalaHexadecimal()
     elif (operacion=="11"):
         HexadecimalaDecimal()
     elif (operacion == "12"):
@@ -520,6 +519,7 @@ while(continuar==True):
     elif(operacion =="19"):
         numeroprimo()
     elif(operacion =="20"):
+        #Con los easter eggs es como el menú, sólo que llama a toda las funciones de juego.
         print("1.-Ahorcado")
         print("2.-Serpientes y Escaleras")
         print("?.-Secreto")
