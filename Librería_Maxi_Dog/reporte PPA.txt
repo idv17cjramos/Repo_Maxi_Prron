@@ -1,0 +1,51 @@
+Iniciamos con la creacion de las funciones mas sencillas de manera grupal:
+
+Suma: El usuario puede introducir la cantidad de valores que desee, separandolos por un espacio, la funcion suma todos los valores. (creada por Julian)
+
+Resta: El usuario puede introducir la cantidad de valores que desee, separandolos por un espacio, la funcion suma todos los valores de minuendo y de sustraendo entre si, para despues hacer la resta entre ambos resultados. (Creada por Luis)
+
+Multiplicacion: El usuario introduce una lista de numeros y los multiplica todos. (Creado por Rodrigo)
+
+Division: El usuario introduce el divisor y el dividendo, la funcion realiza la operacion y genera el resultado. (Creado por Faustino)
+
+Modulo: El usuario introduce el divisor y el dividendo, la funcion realiza la division y regresa el residuo, si es que hay. (Creado por Julian)
+
+Menu: Creamos el menu donde se ven las funciones que se pueden hacer. (Creado por Luis)
+-------------------------------------------------------------------------------------------------------------------------
+Despues realizamos las siguientes funciones:
+
+Potencia: El usuario introduce un coeficiente y un exponente. Si el exponente era 0, se imprimia 1, si el exponente no tenia valor, se tomaba el valor de 2. (Creador por Rodrigo)
+
+Raiz: El usuario introduce el radicando y por defecto el indice es 2, aunque se puede cambiar por otro numero. (Creado por Rodrigo)
+
+Pulgadas a Metros: El usuario introduce una longitud en pulgadas y ese valor se multiplicaba por el equivalente de una pulgada en metros y se regresaba ese valor. (Creado por Julian)
+
+Metros a Yardas: El usuario introduce una longitud en metros y ese valor se multiplicaba por el equivalente de un metro en yardas y se regresaba ese valor. (Creado por Julian)
+
+Metros a Pulgadas: El usuario introduce una longitud en metros y ese valor se multiplicaba por el equivalente de un metro en pulgadas y se regresaba ese valor. (Creado por Faustino)
+
+Yardas a Metros: El usuario introduce una longitud en yardas y ese valor se multiplicaba por el equivalente de una yarda en metros y se regresaba ese valor. (Creado por Faustino)
+
+IMC: El usuario introduce su estatura en metros y su peso en kilogramos y se realizaba la operacion del IMC. Con eso, regresabamos el IMC del usuario y su peso ideal. (Creado por Julian)
+--------------------------------------------------------------------------------------------------------------------------------
+Iniciamos el proyecto en Hack N Plan y asignamos las tareas a cada integrante del equipo. Posteriormente se crearon las siguientes funciones.
+
+Binario a Decimal: El usuario introduce un numero en formato binario y la funcion convierte ese numero al formato decimal. (Creado por Luis)
+
+Decimal a Binario: El usuario introduce un numero en formato decimal y la funcion convierte ese numero al formato binario. (Creado por Rodrigo)
+
+Hexadecimal a Decimal: El usuario introduce un numero en formato hexadecimal y la funcion convierte ese numero al formato decimal. (Creado por Faustino)
+
+Decimal a Hexadecimal: El usuario introduce un numero en formato decimal y la funcion convierte ese numero al formato hexadecimal. (Creado por Faustino)
+
+Detectar si es Primo: El usuario introduce un numero "n" y el programa detecta si es primo o no. (Creado por Rodrigo)
+
+Primos en Rango: El usuario introduce un numero inicial y otro final, el programa detecta de entre el rango de los numeros si son primos o no. (Creado por Julian)
+
+Extras: En este apartado se encuentra los juegos como serpientes y escaleras y el ahorcado. (Creado por Luis)
+
+Agregamos comentarios a las funciones para saber que hacen y que pasos siguen. (Creado por Luis y Rodrigo)
+
+Easter Egg: Agregamos un easter egg delicioso. (Creado por Rodrigo y nomas el)
+
+Nota: Aun no se ha hecho prueba de errores en ninguna funcion
