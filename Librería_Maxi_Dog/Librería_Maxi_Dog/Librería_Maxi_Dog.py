@@ -253,42 +253,30 @@ def HexadecimalaDecimal():
    
    print ("El número convertido a decimal es: " + str(Numeroconvertido))
 
-def decimalaHexadecimal(n):
+def decimalaHexadecimal():
     n = int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))
-    x=(n%16)
-    Hex=""
-    
-   # if (n<0):
-   #     print ("0")
-   # else:
-   #     x=(n%16)
-        #if (x<10):
-         #   print(x)
-    #while (True):
-    #    x = n
-    #    x = x // 16
-    #    if (x > 15):
-    #        x = x//16
-    if (x < 10):
-        Hex=x 
-    if (x == 10):
-        Hex="A"
-    if (x == 11):
-        Hex="B"
-    if (x == 12):
-        Hex="C"
-    if (x == 13):
-        Hex="D"
-    if (x == 14):
-        Hex="E"
-    if (x == 15):
-        Hex="F"
-    
-    if (n - x!=0):
-        return decimalaHexadecimal(n/16)+str(Hex)
-    else:
-        return str(Hex)
-    #print (str(n%16)+ Hex)
+    Hex = []
+    x = n
+    while(x > 0):
+        x = x // 16
+        if(x > 15):
+            x = x // 16
+        if (x < 10):
+            Hex.append(int(x)) 
+        if (x == 10):
+            Hex.append("A")
+        if (x == 11):
+            Hex.append("B")
+        if (x == 12):
+            Hex.append("C")
+        if (x == 13):
+            Hex.append("D")
+        if (x == 14):
+            Hex.append("E")
+        if (x == 15):
+            Hex.append("F")
+    Hex.append(n % 16)
+    print (*Hex)
 
 def ahorcado():
     #diccionarios con frases que se va a jugar
