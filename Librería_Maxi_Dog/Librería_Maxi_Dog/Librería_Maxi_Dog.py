@@ -416,6 +416,7 @@ def PrimosEnRango():
     #    print ("Su numero no es primo, es tio")
 
 def serpientesyescaleras():
+    #Declara Variables del juego
     tiros = 0
     pasos = 0
     indice = 0
@@ -424,6 +425,7 @@ def serpientesyescaleras():
     logro2 = True
     ganar = False
     
+#Tupula con las posiciones de las serpientes y escaleras
     portales =             (1,38,
                             4,14,
                             9,31,
@@ -439,24 +441,26 @@ def serpientesyescaleras():
                             93,73,
                             95,75,
                             98,79)
+ #Listas en las que se almacenan posiciones y nombres  de jugador(es)
     posiciones = []
     nombres = []
-    
+    # Se piden número de jugadores al usuario(s)
     n = int(input("Cuantos jugadores habra? "))
-    
+    #Se meten en la lista de nombres y se crea su posición en 0
     while (indice < n):
         print("Cual es el nombre del jugador " + str(indice + 1) + "? ")
         nu = input()
         posiciones.append(0)
         nombres.append(str(nu))
         indice = indice + 1
-    
+    #Ciclo de los turnos  de los jugadores
     while (ganar == False):
         print("Es turno de " + nombres[turno])
         input ("Presiona una tecla para lanzar los dados: ")
         dado1 = random.randint(1,6)
         dado2 = random.randint(1,6)
         tiros+=1
+   #Tiro de dados y avance de posición
         print ("Dado 1: " +str( dado1) + "    Dado 2: "+str(dado2)+"    Suma: "+ str(dado1+dado2))
         print ("Avanzas de la posicion " +str(posiciones[turno])) 
         posiciones[turno] = posiciones[turno]+dado1+dado2
@@ -465,6 +469,7 @@ def serpientesyescaleras():
             deMas=posiciones[turno] -100
             posiciones[turno] = 100 - deMas 
         SyEi= 0
+    #comparación de las posicioes actuales con la tupula que contiene las serpientes y escaleras. Se checa si sube de posicion o si baja de posicion 
         while(SyEi < len(portales)):
             if(portales[SyEi] == posiciones[turno]):
                 if(portales[SyEi] < portales[SyEi+1]):
@@ -479,11 +484,13 @@ def serpientesyescaleras():
     
     
         print ("A la posicion "+str(posiciones[turno]))
+    #Si los dados son 1 y 1 se imprime par de ases, lo que hace que el primer Logro sea true
         if (dado1 == 1 and dado2 == 1 and logro1 == False):
             print ("Logro desbloqueado: PAR DE ASES!")
             logro1 = True
         if(posiciones[turno] == 100):
             ganar = True
+    #al final de la partida se checa si la persona no cayé en una serpiente, de ser así se imprime el logro 2
             if (logro2 == True):
                 print ("Domador de serpientes!")
             print (nombres[turno] + "\nTiraste " + str(tiros) + " veces"  )
@@ -493,6 +500,8 @@ def serpientesyescaleras():
             turno = 0
 
 def guebitohKonCacsum():
+    #Esta es la magia que le da substancia a todo este programa, sin esto el programa no sirve.
+    #algunas personas dirían que gracias a esto... se hace la magia.
     print("Guebitoh Kon Cacsum...")
     time.sleep(2)
     print("mmmmm uma delisia :v")
