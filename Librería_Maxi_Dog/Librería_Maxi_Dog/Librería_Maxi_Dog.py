@@ -253,8 +253,42 @@ def HexadecimalaDecimal():
    
    print ("El número convertido a decimal es: " + str(Numeroconvertido))
 
-def decimalaHexadecimal():
-    n = int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))             
+def decimalaHexadecimal(n):
+    n = int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))
+    x=(n%16)
+    Hex=""
+    
+   # if (n<0):
+   #     print ("0")
+   # else:
+   #     x=(n%16)
+        #if (x<10):
+         #   print(x)
+    #while (True):
+    #    x = n
+    #    x = x // 16
+    #    if (x > 15):
+    #        x = x//16
+    if (x < 10):
+        Hex=x 
+    if (x == 10):
+        Hex="A"
+    if (x == 11):
+        Hex="B"
+    if (x == 12):
+        Hex="C"
+    if (x == 13):
+        Hex="D"
+    if (x == 14):
+        Hex="E"
+    if (x == 15):
+        Hex="F"
+    
+    if (n - x!=0):
+        return decimalaHexadecimal(n/16)+str(Hex)
+    else:
+        return str(Hex)
+    #print (str(n%16)+ Hex)
 
 def ahorcado():
     frases = {"InFamous":["no pidas una vida mas facil pide ser mas fuerte","todo hombre es responsable del bien que no ha hecho","no pienso hacer esto cada vez para que tu mojes"],
