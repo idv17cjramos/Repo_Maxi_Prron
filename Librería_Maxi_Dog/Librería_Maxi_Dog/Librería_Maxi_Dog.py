@@ -291,15 +291,17 @@ def decimalaHexadecimal(n):
     #print (str(n%16)+ Hex)
 
 def ahorcado():
+    #diccionarios con frases que se va a jugar
     frases = {"InFamous":["no pidas una vida mas facil pide ser mas fuerte","todo hombre es responsable del bien que no ha hecho","no pienso hacer esto cada vez para que tu mojes"],
               "Terminator":["i will be back","hasta la vista baby","estoy viejo no obsoleto"],
               "Star Wars":["luke soy tu padre","siempre en movimiento esta el futuro","no lo intentes hazlo"],          
               "Harry Potter":["para una mente bien preparada la muerte es solo la siguiente gran aventura","es hora de elegir entre lo que es facil y lo que es correcto","la gente encuentra mas facil perdonar a los demas por equivocarse que por acertar"],
               "God Of War":["la medida de un hombre es lo que hace con el poder","la esperanza es para los debiles pandora","en la oscuridad el fuego de la esperanza nos liberara"]}
-    
+    #elección de categoría de manera random
     categoria = random.choice(list(frases.keys()))
+    #Elección de frase de manera random
     frase = random.choice(frases[categoria])
-    
+    #Sprites del aahorcado
     dibujo = ['''
     
       +---+
@@ -357,6 +359,9 @@ def ahorcado():
      / \  |
           |
     =========''']
+    #--------------------------------
+    #VARIABLES
+    #------------------------------
     palabra = list(frase)
     vacio = "_"*len(frase)
     correctas = list(vacio)
@@ -365,16 +370,23 @@ def ahorcado():
     flag = True
     perder = False
     ganar = False
-    print("vamos a jugar con frases de " + str(categoria))
+    #---------------------------------
+    #
+    #---------------------------------
+
+    print("Vamo a jugál con frases de " + str(categoria))
 
     while(ganar == False and perder == False):
+    #Impresión de los errores que ha cometido el jugador
         print(dibujo[errores])
         print(*correctas)
+    #checar si el jugador usa una letra, que ya había usado con anterioridad y  checar si la letra que usa es correcta
         intento = input("Ingresa una letra y averigua si esta dentro de la palabra secreta: ")
         if (intento in correctas):
             print("Ya usaste esa letra!")
             flag = True
         contador = 0
+    #Game loop, checa  input de usuario, ve si está en la frase que va a usar
         while (contador < len(palabra)):
             espacios = " "
             if (espacios in palabra[contador]):
@@ -382,15 +394,18 @@ def ahorcado():
             if (intento in palabra[contador]):
                 correctas[contador] = intento
             contador = contador + 1
+    #IMpresión de si está correcto o no
             if (contador == len(palabra) and flag == False):
                 print("correcto!")
         if(intento not in palabra):
             print("No esta!")
             errores = errores + 1
+    #Si los errores son 7, se acaba el juego, se dibuja el sprite final y se le dice al jugador la frase que era
         if (errores == 7):
             print ("Perdiste, moriras agonizantemente")
             print("PD: La palabra era " + str(frase))
             perder = True
+    #Si todas las letras se adivinan, se le notifica al jugador y acaba el juego.
         if (correctas == palabra):
             print(*correctas)
             print("Eres una chingoneria, le atinaste!")
@@ -512,7 +527,10 @@ def guebitohKonCacsum():
     time.sleep(3)
     print("no, ya enserio, estas reprobado para toda la vida :)")
 
+#bandera para saber si elusuairo quiere hacer otra operación
 continuar = True
+
+#Se manda a llamar la función presentación, la cual ha ce un display del mensaje de bienvenida y le pregunta al usuario qué función es la que quiere hacer.
 presentacion()
 
 
