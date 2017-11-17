@@ -1,3 +1,7 @@
+Parcial 1
+
+
+
 Iniciamos con la creacion de las funciones mas sencillas de manera grupal:
 
 Suma: El usuario puede introducir la cantidad de valores que desee, separandolos por un espacio, la funcion suma todos los valores. (creada por Julian)
@@ -12,6 +16,11 @@ Modulo: El usuario introduce el divisor y el dividendo, la funcion realiza la di
 
 Menu: Creamos el menu donde se ven las funciones que se pueden hacer. (Creado por Luis)
 -------------------------------------------------------------------------------------------------------------------------
+
+PArcial 2
+
+
+
 Despues realizamos las siguientes funciones:
 
 Potencia: El usuario introduce un coeficiente y un exponente. Si el exponente era 0, se imprimia 1, si el exponente no tenia valor, se tomaba el valor de 2. (Creador por Rodrigo)
@@ -28,6 +37,10 @@ Yardas a Metros: El usuario introduce una longitud en yardas y ese valor se mult
 
 IMC: El usuario introduce su estatura en metros y su peso en kilogramos y se realizaba la operacion del IMC. Con eso, regresabamos el IMC del usuario y su peso ideal. (Creado por Julian)
 --------------------------------------------------------------------------------------------------------------------------------
+Parcial3
+
+
+
 Iniciamos el proyecto en Hack N Plan y asignamos las tareas a cada integrante del equipo. Posteriormente se crearon las siguientes funciones.
 
 Binario a Decimal: El usuario introduce un numero en formato binario y la funcion convierte ese numero al formato decimal. (Creado por Luis)
@@ -49,3 +62,19 @@ Agregamos comentarios a las funciones para saber que hacen y que pasos siguen. (
 Easter Egg: Agregamos un easter egg delicioso. (Creado por Rodrigo y nomas el)
 
 Nota: Aun no se ha hecho prueba de errores en ninguna funcion
+
+--------------------------------------------------------------------
+-----------------
+--
+
+
+
+Reporte semana del 13 al 17 de noviembre del 2017
+
+
+Esta semana se termin¢ de hacer los comentarios de todo el c¢digo.
+Se empezaron a hacer pruebas  para hacer que el c¢digo no crasheara si se le pon¡a un caracter que la funci¢n no deb¡a de recibir 
+Se termin¢ (al fin) la funci¢n de decimal a hexadecimal
+Nos hicimos un poquito menos weyes y ya no jugamos el DLC de Horizon (falta que Rodrigo lo acabe por que El Awelo ya lo acab¢)
+
+Hasta aqu¡ mi reporte ieip¡.
