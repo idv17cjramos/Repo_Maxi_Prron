@@ -4,6 +4,7 @@ import time
 import sys
 import random
 
+
 def presentacion(): 
     #Texto de bienvenida para el usuario, contiene todas las operaciones de la calculadora numeradas
     print ("Bienvenido a la librería Maxi Dog")
@@ -32,14 +33,20 @@ def presentacion():
     print ("-"*80+  "\n")
 
 def suma():
+    sumita=[]
     #Solicita un input del usuario
     sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
     #Crea una lista en base a los numeros introducidos por el usuario, separandolos por un espacio
-    sumita = [int(x) for x in sumita.split (" ") ]
+    sumita = [(x) for x in sumita.split (" ") ]
+    #Elimina letras en caso de haber
+    for x in sumita:
+        if(not x.isdigit()):
+            sumita.remove(x)
+    sumita=filter(None,sumita)
     #Suma todos los elementos de la lista "sumita"
     total = 0
     for numero in sumita:
-        total += numero
+        total += int(numero)
     #Imprime el resultado de la suma
     print ("El resultado es:\n",total)
  
@@ -258,9 +265,7 @@ def decimalaHexadecimal():
     Hex = []
     x = n
     while(x > 0):
-        x = x // 16
-        if(x > 15):
-            x = x // 16
+        x = x % 16
         if (x < 10):
             Hex.append(int(x)) 
         if (x == 10):
