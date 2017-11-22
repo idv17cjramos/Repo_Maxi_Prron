@@ -51,41 +51,70 @@ def suma():
     print ("El resultado es:\n",total)
  
 def resta():
+    restita1=[]
     #Solicita un los minuendos, los convierte en una lista separando por un espacio y suma todos los elementos de la lista
     restita1 = input("Introduce minuendos (Separados por un espacio): ")
-    restita1 = [int(x) for x in restita1.split (" ") ]
+    restita1 = [(x) for x in restita1.split (" ") ]
+    for x in restita1:
+        if(not x.isdigit()):
+            restita1.remove(x)
+    restita1=filter(None,restita1)
     total1 = 0
     for numero1 in restita1:
-        total1 += numero1
+        total1 += int(numero1)
+    restita2=[]
     #Solicita los sustraendos, los convierte en una lista separando por un espacio y resta todos los elementos de la lista
     restita2 = input("Introduce sustraendos(Separados por un espacio): ")
-    restita2 = [int(x) for x in restita2.split (" ") ]
+    restita2 = [(x) for x in restita2.split (" ") ]
+    for x in restita2:
+        if(not x.isdigit()):
+            restita2.remove(x)
+    restita2=filter(None,restita2)
     total2 = 0
     for numero2 in restita2:
-        total2 -= numero2
+        total2 -= int(numero2)
     #Suma los minuendos y los sustraendos e imprime el resultado
     print ("El resultado es: ")
     print (int(total1) + int(total2))
  
 def multiplicacion():
+    multi=[]
     #Solicita los numeros a multiplicar
     multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
     #Crea una lista de los numeros introducidos, separandolos por espacios
-    multi = [int(x) for x in multi.split (" ") ]
+    multi = [(x) for x in multi.split (" ") ]
+    for x in multi:
+        if(not x.isdigit()):
+            multi.remove(x)
+    multi=filter(None,multi)
     #Multiplica en orden los elementos de la lista en forma de producto acumulado e imprime el resultado
     total = 1
     for numero in multi:
-        total *= numero
+        total *= int(numero)
     print ("El resultado es: \n", total) 
 
 def division():
     #Solicita el dividendo
-    x  =  int(input("Escribe el dividendo: "))
+    while True:
+        try:
+            dividendo  =  (input("Escribe el dividendo: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Solicita el divisor
-    y  =  int(input("Escribe el divisor: "))
+    while True:
+        try:
+            divisor  =  (input("Escribe el divisor: "))
+            break
+        except:
+            print("Introduce solo numeros")
     #divide el dividendo entre el dividor e imprime el resultado
-    print ("El resultado es: ")
-    print (x/y)
+    cociente=(int(dividendo)/int(divisor))
+    verificador=(int(dividendo)%int(divisor))
+    if verificador==0:
+        print (int(cociente))
+    else:
+        print (cociente)
  
 def modulo():
     #Solicita el dividendo
