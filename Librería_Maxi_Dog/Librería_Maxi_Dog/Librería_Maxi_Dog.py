@@ -51,56 +51,105 @@ def suma():
     print ("El resultado es:\n",total)
  
 def resta():
+    restita1=[]
     #Solicita un los minuendos, los convierte en una lista separando por un espacio y suma todos los elementos de la lista
     restita1 = input("Introduce minuendos (Separados por un espacio): ")
-    restita1 = [int(x) for x in restita1.split (" ") ]
+    restita1 = [(x) for x in restita1.split (" ") ]
+    for x in restita1:
+        if(not x.isdigit()):
+            restita1.remove(x)
+    restita1=filter(None,restita1)
     total1 = 0
     for numero1 in restita1:
-        total1 += numero1
+        total1 += int(numero1)
+    restita2=[]
     #Solicita los sustraendos, los convierte en una lista separando por un espacio y resta todos los elementos de la lista
     restita2 = input("Introduce sustraendos(Separados por un espacio): ")
-    restita2 = [int(x) for x in restita2.split (" ") ]
+    restita2 = [(x) for x in restita2.split (" ") ]
+    for x in restita2:
+        if(not x.isdigit()):
+            restita2.remove(x)
+    restita2=filter(None,restita2)
     total2 = 0
     for numero2 in restita2:
-        total2 -= numero2
+        total2 -= int(numero2)
     #Suma los minuendos y los sustraendos e imprime el resultado
     print ("El resultado es: ")
     print (int(total1) + int(total2))
  
 def multiplicacion():
+    multi=[]
     #Solicita los numeros a multiplicar
     multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
     #Crea una lista de los numeros introducidos, separandolos por espacios
-    multi = [int(x) for x in multi.split (" ") ]
+    multi = [(x) for x in multi.split (" ") ]
+    for x in multi:
+        if(not x.isdigit()):
+            multi.remove(x)
+    multi=filter(None,multi)
     #Multiplica en orden los elementos de la lista en forma de producto acumulado e imprime el resultado
     total = 1
     for numero in multi:
-        total *= numero
+        total *= int(numero)
     print ("El resultado es: \n", total) 
 
 def division():
-    #Solicita el dividendo
-    x  =  int(input("Escribe el dividendo: "))
+    #Solicita el dividendo y checa si son numeros
+    while True:
+        try:
+            dividendo  =  int(input("Escribe el dividendo: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Solicita el divisor
-    y  =  int(input("Escribe el divisor: "))
+    while True:
+        try:
+            divisor  =  int(input("Escribe el divisor: "))
+            break
+        except:
+            print("Introduce solo numeros")
     #divide el dividendo entre el dividor e imprime el resultado
-    print ("El resultado es: ")
-    print (x/y)
+    cociente=(int(dividendo)/int(divisor))
+    verificador=(int(dividendo)%int(divisor))
+    if verificador==0:
+        print (int(cociente))
+    else:
+        print (cociente)
  
 def modulo():
-    #Solicita el dividendo
-    x  =  int(input("Escribe el dividendo: "))
+ #Solicita el dividendo
+    while True:
+        try:
+            dividendo  =  int(input("Escribe el dividendo: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Solicita el divisor
-    y  =  int(input("Escribe el divisor: "))
+    while True:
+        try:
+            divisor  =  int(input("Escribe el divisor: "))
+            break
+        except:
+            print("Introduce solo numeros")
     #divide el dividendo entre el divisor e imprime el residuo
     print ("El resultado es: ")
-    print (x%y)
+    print (int(dividendo)%int(divisor))
  
 def raiz():
     cuadrada = 2
-    #Solicita el numero base y el exponente
-    numeroBase = float(input("Escriba el número que quiera radicar: "))
-    exponente = float(input("Escriba la radical a la que lo quiera radicalizar: "))
+    #Solicita el numero base y el exponente y checa si son numeros
+    while True:
+        try:
+            numeroBase = float(input("Escriba el radicando: "))
+            break
+        except:
+            print("Introduce solo numeros")
+    while True:
+        try:
+            exponente = float(input("Escriba el indice: "))
+            break
+        except:
+            print("Introduce solo numeros")
     #Si el exponente es igual a 0 lanza un mensaje de error y sales de la operacion
     if (exponente == "0"):
         print ("Radicaste a cero, tu resultado es un error")
@@ -122,6 +171,8 @@ def raiz():
  
 def potencia():
     #Solicita el numero base y el exponente
+    #while True:
+
     numeroBase = input("Escriba el número que quiera elevar: ")
     exponente = input("Escriba el exponente al que lo quiera elevar: ")
     #Al elevar a la 0 el resultado será 1
@@ -139,50 +190,85 @@ def potencia():
  
 def metrosaYardas():
     #Se solicitan al usuario los metros a convertir
-    metros=float(input("Escribe la cantidad de metros a convertir: "))
+    while True:
+        try:
+            metros=float(input("Escribe la cantidad de metros a convertir: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Esta es la equivalencia de yardas por metro
     yardas = 1.09361
     #Se multiplican los metros por su equivalencia en yardas y se imprime el resultado
     print ("El resultado es: ")
-    print (metros*yardas)
+    print ((metros*yardas),"yardas")
  
 def yardasaMetros():
     #Se solicitan al usuario los yardas a convertir
-    yardas=float(input("Escribe la cantidad de yardas a convertir: "))
+    while True:
+        try:
+            yardas=float(input("Escribe la cantidad de yardas a convertir: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Esta es la equivalencia en metros por yarda
     metros = 0.9144
     #Se multiplican las yardas por su equivalencia en metros y se imprime el resultado
     print ("El resultado es: ")
-    print (yardas*metros)
+    print ((yardas*metros),"metros")
 
 def metrosaPulgadas():
     #Se solicita al usuario la cantidad de metros
-    metros = float(input("Escribe la cantidad de metros a convertir: "))
+    while True:
+        try:
+            metros = float(input("Escribe la cantidad de metros a convertir: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Equivalencia de pulgadas en un metro
     pulgadas = 39.3701
     #Se imprime el resultado y se multiplica pulgadas(que es valor continuo) por metros(que es la cantidad que se le pide al usuario)
     print ("El resultado es: ")
-    print (metros*pulgadas)
+    print ((metros*pulgadas),"pulgadas")
  
 def pulgadasaMetros():
     #Se solicita al usuario la cantidad de pulgadas
-    pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
+    while True:
+        try:
+            pulgadas = float(input("Escribe la cantidad de pulgadas a convertir: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Equivalencia de metrso en una pulgada
     metros = 0.0254
     #Se imprime el resultado y se multiplica metros(que es valor continuo) por pulgadas(que es la cantidad que se le pide al usuario)
     print ("El resultado es: ")
-    print (pulgadas*metros)
+    print (pulgadas*metros,"metros")
  
 def IMC():
     #Se le pide al usuario que meta su sexo, peso y estatura.
-    sexo=input("Eres mujer u hombre? ")
-    peso=float(input("Introduce tu peso en kilos: "))
-    estatura=float(input("Introduce tu estatura en metros: "))
+    while True:
+        sexo=input("Eres mujer u hombre? ")
+        if sexo.lower()== "mujer" or sexo.lower()=="hombre":
+            break
+        else:
+            print("Solo puedes introducir mujer u hombre")
+    while True:
+        try:
+            peso=float(input("Introduce tu peso en kilos: "))
+            break
+        except:
+            print ("Introduce solo numeros")
+    while True:
+        try:
+            estatura=float(input("Introduce tu estatura en metros: "))
+            break
+        except:
+            print("Introduce solo numeros")
     # Sexo se pasa a minúsculas
     sexo.lower()
     #Se calcula el IMC con la fórumla y se imprime la cantidad del índice de masas corporal.
     imc=(peso/(estatura)**2)
-    print ("Tu indice de masa cormporal es: " + str(imc))
+    print ("Tu indice de masa corporal es: " + str(imc))
     #Se empiezan a hacer comparaciones del IMC obtenido con los valores "sanos" del IMC. Se imprime alguno de los casos
     if (imc<18.5):
         print ("Tienes peso bajo")
@@ -587,6 +673,7 @@ while(continuar==True):
         else:
             guebitohKonCacsum()
 
+    print(" ")
     pregunta = input('Quieres hacer otra operacion?(escribe "si" o "no")\n')
     presentacion()
     if(pregunta =="no"):
