@@ -78,3 +78,14 @@ Se termin¢ (al fin) la funci¢n de decimal a hexadecimal
 Nos hicimos un poquito menos weyes y ya no jugamos el DLC de Horizon (falta que Rodrigo lo acabe por que El Awelo ya lo acab¢)
 
 Hasta aqu¡ mi reporte ieip¡.
+
+------------------------------------------------------------------------------------------
+
+
+Reporte semana del 20 al 24 de noviembre del 2017
+
+Se hicieron laprueb de errores de las primeras 6 funciones, el programa sihue corriendo si uno pone cosas que no deberían de ir ahí.
+Nos hicimos ligeramente menos weyes
+En la división si el resultado es entero, te imprime el entero, no el .0
+
+Hasta aquí mi reporte ieipi
