@@ -33,22 +33,39 @@ def presentacion():
     print ("-"*80+  "\n")
 
 def suma():
-    sumita=[]
+    permitidos=["1","2","3","4","5","6","7","8","9","0"," ","."]
     #Solicita un input del usuario
     sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
+    comprobar=0
+    comprobado=False
+    while(comprobado==False):
+        if(sumita==""):
+            print("Introduce solo numeros")
+            sumita=input("Introduce numeros a sumar (Separados por un espacio): ")
+        elif (comprobar<len(sumita)):
+            while(comprobar<len(sumita)):
+                if(sumita[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    sumita=input("Introduce numeros a sumar (Separados por un espacio): ")
+                if(not sumita==""):
+                    comprobado=True
     #Crea una lista en base a los numeros introducidos por el usuario, separandolos por un espacio
     sumita = [(x) for x in sumita.split (" ") ]
     #Elimina letras en caso de haber
-    for x in sumita:
-        if(not x.isdigit()):
-            sumita.remove(x)
-    sumita=filter(None,sumita)
     #Suma todos los elementos de la lista "sumita"
     total = 0
     for numero in sumita:
-        total += int(numero)
+        total += float(numero)
+    deci=total%1
+    if (deci==0):
+        total=int(total)
+    else:
+        total=total
     #Imprime el resultado de la suma
-    print ("El resultado es:\n",total)
+    print ("El resultado es:",total)
  
 def resta():
     restita1=[]
@@ -78,20 +95,37 @@ def resta():
     print (int(total1) + int(total2))
  
 def multiplicacion():
-    multi=[]
+    permitidos=["1","2","3","4","5","6","7","8","9","0"," ","."]
     #Solicita los numeros a multiplicar
     multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
+    comprobar=0
+    comprobado=False
+    while(comprobado==False):
+        if(multi==""):
+            print("Introduce solo numeros")
+            multi=input("Introduce numeros a multiplicar (Separados por un espacio): ")
+        elif (comprobar<len(multi)):
+            while(comprobar<len(multi)):
+                if(multi[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    multi=input("Introduce numeros a multiplicar (Separados por un espacio): ")
+                if(not multi==""):
+                    comprobado=True
     #Crea una lista de los numeros introducidos, separandolos por espacios
     multi = [(x) for x in multi.split (" ") ]
-    for x in multi:
-        if(not x.isdigit()):
-            multi.remove(x)
-    multi=filter(None,multi)
     #Multiplica en orden los elementos de la lista en forma de producto acumulado e imprime el resultado
     total = 1
     for numero in multi:
-        total *= int(numero)
-    print ("El resultado es: \n", total) 
+        total *= float(numero)
+    deci=total%1
+    if (deci==0):
+        total=int(total)
+    else:
+        total=total
+    print ("El resultado es:", total) 
 
 def division():
     #Solicita el dividendo y checa si son numeros
@@ -347,27 +381,32 @@ def HexadecimalaDecimal():
    print ("El número convertido a decimal es: " + str(Numeroconvertido))
 
 def decimalaHexadecimal():
-    n = int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))
-    Hex = []
-    x = n
-    while(x > 0):
-        x = x % 16
-        if (x < 10):
-            Hex.append(int(x)) 
-        if (x == 10):
-            Hex.append("A")
-        if (x == 11):
-            Hex.append("B")
-        if (x == 12):
-            Hex.append("C")
-        if (x == 13):
-            Hex.append("D")
-        if (x == 14):
-            Hex.append("E")
-        if (x == 15):
-            Hex.append("F")
-    Hex.append(n % 16)
-    print (*Hex)
+    n = input("Ingresa el número decimal que quieres convertir a hexadecimal: ")
+    Hexa=""
+    permitidos=["1","2","3","4","5","6","7","8","9","0"]
+    comprobar=0
+    comprobado=False
+    while (comprobado==False):
+        if (n==""):
+            print ("Ingrese solo numeros")
+            n=int(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))
+        elif (comprobar<len(n)):
+            while (comprobar<len(n)):
+                if(n[comprobar] in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print ("Ingrese solo numeros")
+                    n=(input("Ingresa el número decimal que quieres convertir a hexadecimal: "))
+            if(not n==""):
+                comprobado=True
+    n=int(n)
+    while ((n//2)!=0):
+        Hexa=str(n%2)+Hexa
+        n=n//2
+    bina=(str(n)+Hexa)
+    hexadecimal=hex(int(bina,2))
+    print ("Tu resultado es",hexadecimal)
 
 def ahorcado():
     #diccionarios con frases que se va a jugar
