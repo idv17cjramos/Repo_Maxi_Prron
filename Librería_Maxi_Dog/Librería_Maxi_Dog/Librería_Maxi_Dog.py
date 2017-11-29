@@ -1,5 +1,10 @@
 #Bienvenido Saint Yeipi
 #Importamos el tiempo...
+
+#Lo de abajo es para poder usar caracteres que no estan en el teclado americano
+#!/usr/bin/env python
+#-*- coding: utf-8 -*-
+
 import time
 import sys
 import random
@@ -29,7 +34,8 @@ def presentacion():
     print("17.-Pulgadas a metros")
     print("18.-Calcular Indice de Masa Corporal")
     print("19.-Calcular si es numero primo")
-    print("20.-Extras")
+    print("20.-Calcular numeros en un rango")
+    print("21.-Extras")
     print ("-"*80+  "\n")
 
 def suma():
@@ -357,23 +363,22 @@ def binarioaDecimal():
  
 def numeroprimo():
     #Usuario introduce número que quiere saber si es primo
-    x= int(input("Introduzca un numero entero:"))
-    contador=2
+    x= int(input("Introduzca un numero entero: "))
     #Bandera de primo es igual a verdadero
     esPrimo = True
     #Mientras el contador sea menor a x(x siendo el input del número)
-    while(contador < x ):
-      Si 
-      if(x % contador == 0):
-        esPrimo = False
-      contador = contador + 1
+    if x>1:
+      for i in range(2,x):
+        if (x%i)==0:
+            esPrimo=False
     #Si la 
-    if(esPrimo):
-        print ("Su numero es primo")
+      if(esPrimo==True):
+          print ("El numero",x,"es primo")
     #Chistorete
+      else:
+          print ("El numero",x,"no es primo")
     else:
-        print ("Su numero no es primo, es tio")
-
+        print("El numero",x,"no es primo")
 def HexadecimalaDecimal():
    NumoerAconvertir = input ("introduce el número en Hexadecimal que quieras convertir a decimal: ")
    Numeroconvertido = int(NumoerAconvertir,16)
@@ -532,21 +537,41 @@ def ahorcado():
         turnos += 1
 
 def PrimosEnRango():
-    menor= int(input("Introduzca el primer numero del rango: "))
-    mayor=int(input("Introduzca el ultimo numero del rango: "))
-    while (menor<=mayor):
-        numeros=[]
-        mayor+=1
-    #contador=2
-    #esPrimo = True
-    #while(contador < x ):
-    #  if(x % contador == 0):
-    #    esPrimo = False
-    #  contador = contador + 1
-    #if(esPrimo):
-    #    print ("Su numero es primo")
-    #else:
-    #    print ("Su numero no es primo, es tio")
+    Numeros=[]
+    verificar=0
+    EsPrimo=True
+    while True:
+        try:
+            menor= int(input("Introduzca el primer numero del rango: "))
+            break
+        except:
+            print ("Introduce solo numeros")
+    print("")
+    while True:
+        try:
+            mayor=int(input("Introduzca el ultimo numero del rango: "))
+            break
+        except:
+            print ("Introduce solo numeros")
+   # while (menor<=mayor):
+   #     Numeros.append(menor)
+   #     menor+=1
+    for i in range(menor,mayor+1):
+        if i>1:
+            for num in range(2,i):
+                if (i%num)==0:
+                    break
+            else:
+                Numeros+=str(i)
+    print("\n"+"Los numeros primos en ese rango son:",*Numeros)
+    #while (verificar<len(Numeros)):
+    #    for i in range (1,Numeros[verificar]):
+    #        if (Numeros[verificar]%i==0):
+    #            EsPrimo=False
+    #        if (EsPrimo==False):
+    #            del Numeros[verificar]
+    #    verificar+=1
+    #print (*Numeros)
 
 def serpientesyescaleras():
     #Declara Variables del juego
@@ -644,6 +669,7 @@ def guebitohKonCacsum():
     print("Es neta, vato? >:V")
     time.sleep(3)
     print("no, ya enserio, estas reprobado para toda la vida :)")
+    time.sleep(1)
 
 #bandera para saber si elusuairo quiere hacer otra operación
 continuar = True
@@ -697,7 +723,9 @@ while(continuar==True):
         IMC()
     elif(operacion =="19"):
         numeroprimo()
-    elif(operacion =="20"):
+    elif(operacion=="20"):
+        PrimosEnRango()
+    elif(operacion =="21"):
         #Con los easter eggs es como el menú, sólo que llama a toda las funciones de juego.
         print("1.-Ahorcado")
         print("2.-Serpientes y Escaleras")
