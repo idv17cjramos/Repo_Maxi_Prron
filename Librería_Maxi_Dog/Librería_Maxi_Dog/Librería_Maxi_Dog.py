@@ -75,30 +75,45 @@ def suma():
  
 def resta():
     restita1=[]
+
     #Solicita un los minuendos, los convierte en una lista separando por un espacio y suma todos los elementos de la lista
-    restita1 = input("Introduce minuendos (Separados por un espacio): ")
-    restita1 = [(x) for x in restita1.split (" ") ]
-    for x in restita1:
-        if(not x.isdigit()):
-            restita1.remove(x)
-    restita1=filter(None,restita1)
-    total1 = 0
-    for numero1 in restita1:
-        total1 += int(numero1)
+    while True:
+        try:
+            restita1 = int(input("Introduce minuendo: "))
+            break
+        except:
+            print ("Introduce solo un numero")
+    
     restita2=[]
     #Solicita los sustraendos, los convierte en una lista separando por un espacio y resta todos los elementos de la lista
-    restita2 = input("Introduce sustraendos(Separados por un espacio): ")
+    permitidos=["1","2","3","4","5","6","7","8","9","0"," ","."]
+    restita2 = input("Introduce sustraendos (Separados por un espacio): ")
+    comprobar=0
+    comprobado=False
+    while(comprobado==False):
+        if(restita2==""):
+            print("Introduce solo numeros")
+            restita2=input("Introduce sustraendos (Separados por un espacio): ")
+        elif (comprobar<len(restita2)):
+            while(comprobar<len(restita2)):
+                if(restita2[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    restita2=input("Introduce sustraendos (Separados por un espacio): ")
+                if(not restita2==""):
+                    comprobado=True
     restita2 = [(x) for x in restita2.split (" ") ]
-    for x in restita2:
-        if(not x.isdigit()):
-            restita2.remove(x)
-    restita2=filter(None,restita2)
+
     total2 = 0
-    for numero2 in restita2:
-        total2 -= int(numero2)
+    #for numero2 in restita2:
+    #    total2 -= int(numero2)
     #Suma los minuendos y los sustraendos e imprime el resultado
-    print ("El resultado es: ")
-    print (int(total1) + int(total2))
+    restita2=list(map(int, restita2))
+    restita3=sum(restita2)
+    final=restita1-restita3
+    print ("El resultado es:",final)
  
 def multiplicacion():
     permitidos=["1","2","3","4","5","6","7","8","9","0"," ","."]
@@ -208,7 +223,7 @@ def raiz():
         print("No introdujiste radical, se sacara raiz cuadrada.")
         print("El resultado es: ")
         print(str(numeroBase ** (1/cuadrada)))
- 
+ #Este
 def potencia():
     #Solicita el numero base y el exponente
     #while True:
@@ -332,7 +347,7 @@ def IMC():
         estatura=estatura*100
         ideal=(estatura-100)*0.85
         print ("Tu peso ideal es " + str(ideal))
- 
+ #Este
 def decimalaBinario():
     #Se le pide al usuario que ingrese el número que quiere convertir a binario.
     numero = int(input("Ingresa el número que quieres convertir a binario: "))
@@ -350,7 +365,7 @@ def decimalaBinario():
     #Imprime lista al revés como el número binario.
     print("Tu número binario es: ")
     print(*listaReversa)
- 
+ #Este
 def binarioaDecimal():
     #Usuario mete el número binario que va a convertir a decimal
     binario = input("Ingresa el número binario a convertir a decimal: ")
@@ -360,7 +375,7 @@ def binarioaDecimal():
     for x in binario:
         decimal = decimal*2 + int(x)
     print ("Tu número en decimal es: \n" + str(decimal))
- 
+ #Este
 def numeroprimo():
     #Usuario introduce número que quiere saber si es primo
     x= int(input("Introduzca un numero entero: "))
@@ -379,6 +394,7 @@ def numeroprimo():
           print ("El numero",x,"no es primo")
     else:
         print("El numero",x,"no es primo")
+#Este
 def HexadecimalaDecimal():
    NumoerAconvertir = input ("introduce el número en Hexadecimal que quieras convertir a decimal: ")
    Numeroconvertido = int(NumoerAconvertir,16)
@@ -542,36 +558,27 @@ def PrimosEnRango():
     EsPrimo=True
     while True:
         try:
-            menor= int(input("Introduzca el primer numero del rango: "))
+            menor= int(input("Introduzca el primer número del rango: "))
             break
         except:
             print ("Introduce solo numeros")
     print("")
     while True:
         try:
-            mayor=int(input("Introduzca el ultimo numero del rango: "))
+            mayor=int(input("Introduzca el último número del rango: "))
             break
         except:
             print ("Introduce solo numeros")
-   # while (menor<=mayor):
-   #     Numeros.append(menor)
-   #     menor+=1
+
     for i in range(menor,mayor+1):
         if i>1:
             for num in range(2,i):
                 if (i%num)==0:
                     break
             else:
-                Numeros+=str(i)
+                Numeros.append(i)
     print("\n"+"Los numeros primos en ese rango son:",*Numeros)
-    #while (verificar<len(Numeros)):
-    #    for i in range (1,Numeros[verificar]):
-    #        if (Numeros[verificar]%i==0):
-    #            EsPrimo=False
-    #        if (EsPrimo==False):
-    #            del Numeros[verificar]
-    #    verificar+=1
-    #print (*Numeros)
+
 
 def serpientesyescaleras():
     #Declara Variables del juego
