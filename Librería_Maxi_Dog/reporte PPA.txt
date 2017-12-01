@@ -89,3 +89,13 @@ Nos hicimos ligeramente menos weyes
 En la división si el resultado es entero, te imprime el entero, no el .0
 
 Hasta aquí mi reporte ieipi
+
+-----------------------------------------------------------------------------------
+
+Reporte semana del 25 al 30 de noviembre del 2017
+
+Probamos las demas funciones y realizamos correccion de errores en todas menos 5 funciones. Acabamos la función de decimal a hexadecimal.
+El Julian se puso la pilas bien machin
+Reescribió alguna funciones
+
+H4st4 4qui mi reporte yeipi
