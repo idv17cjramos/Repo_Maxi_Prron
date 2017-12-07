@@ -513,10 +513,10 @@ def numeroprimo():
       for i in range(2,x):
         if (x%i)==0:
             esPrimo=False
-    #Si la 
+    #Si la bandera se mantiene como verdadera dice que el numero es primo
       if(esPrimo==True):
           print ("El numero",x,"es primo")
-    #Chistorete
+    #Si la bandera cambia lanza un mensaje diciendo que no es primo
       else:
           print ("El numero",x,"no es primo")
     else:
