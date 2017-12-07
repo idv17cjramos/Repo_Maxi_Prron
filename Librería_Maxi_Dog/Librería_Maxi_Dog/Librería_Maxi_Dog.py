@@ -28,18 +28,20 @@ def presentacion():
     print("11.-Hexadecimal a decimal")
     print("12.-Binario a decimal")
     print("13.-Decimal a binario")
-    print("14.-Metros a yardas")
-    print("15.-Yardas a metros")
-    print("16.-Metros a pulgadas")
-    print("17.-Pulgadas a metros")
-    print("18.-Calcular Indice de Masa Corporal")
-    print("19.-Calcular si es numero primo")
-    print("20.-Calcular numeros en un rango")
-    print("21.-Extras")
+    print("14.-Binario a hexadecimal")
+    print("15.-Hexadecimal a binario")
+    print("16.-Metros a yardas")
+    print("17.-Yardas a metros")
+    print("18.-Metros a pulgadas")
+    print("19.-Pulgadas a metros")
+    print("20.-Calcular Indice de Masa Corporal")
+    print("21.-Calcular si es numero primo")
+    print("22.-Calcular numeros en un rango")
+    print("23.-Extras")
     print ("-"*80+  "\n")
 
 def suma():
-    permitidos=["1","2","3","4","5","6","7","8","9","0"," ","."]
+    permitidos=["1","2","3","4","5","6","7","8","9","0"," ",".","-"]
     #Solicita un input del usuario
     sumita = input("Introduce numeros a sumar (Separados por un espacio): ")
     comprobar=0
@@ -62,6 +64,8 @@ def suma():
     sumita = [(x) for x in sumita.split (" ") ]
     #Elimina letras en caso de haber
     #Suma todos los elementos de la lista "sumita"
+    if sumita[len(sumita)-1]=="":
+        del sumita[len(sumita)-1]
     total = 0
     for numero in sumita:
         total += float(numero)
@@ -86,7 +90,7 @@ def resta():
     
     restita2=[]
     #Solicita los sustraendos, los convierte en una lista separando por un espacio y resta todos los elementos de la lista
-    permitidos=["1","2","3","4","5","6","7","8","9","0"," ","."]
+    permitidos=["1","2","3","4","5","6","7","8","9","0"," ",".","-"]
     restita2 = input("Introduce sustraendos (Separados por un espacio): ")
     comprobar=0
     comprobado=False
@@ -116,7 +120,7 @@ def resta():
     print ("El resultado es:",final)
  
 def multiplicacion():
-    permitidos=["1","2","3","4","5","6","7","8","9","0"," ","."]
+    permitidos=["1","2","3","4","5","6","7","8","9","0"," ",".","-"]
     #Solicita los numeros a multiplicar
     multi = input("Introduce numeros que quieras multiplicar (Separados por un espacio): ")
     comprobar=0
@@ -223,13 +227,44 @@ def raiz():
         print("No introdujiste radical, se sacara raiz cuadrada.")
         print("El resultado es: ")
         print(str(numeroBase ** (1/cuadrada)))
- #Este
+ #Este ya quedo
 def potencia():
+    permitidos=["1","2","3","4","5","6","7","8","9","0","",".","-"]
     #Solicita el numero base y el exponente
-    #while True:
-
-    numeroBase = input("Escriba el número que quiera elevar: ")
-    exponente = input("Escriba el exponente al que lo quiera elevar: ")
+    numeroBase = input("Introduce el coeficiente: ")
+    comprobar=0
+    comprobado=False
+    while(comprobado==False):
+        if(numeroBase==""):
+            print("Introduce solo numeros")
+            numeroBase=input("Introduce el coeficiente: ")
+        elif (comprobar<len(numeroBase)):
+            while(comprobar<len(numeroBase)):
+                if(numeroBase[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    numeroBase=input("Introduce el coeficiente: ")
+                if(not numeroBase==""):
+                    comprobado=True
+    exponente = input("Introduce el exponente al que lo quiera elevar: ")
+    comprobar=0
+    comprobado=False
+    while(comprobado==False):
+        if(exponente==""):
+            print("Introduce solo numeros")
+            exponente=input("Introduce el exponente al que lo quiera elevar: ")
+        elif (comprobar<len(exponente)):
+            while(comprobar<len(exponente)):
+                if(exponente[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    exponente=input("Introduce el exponente al que lo quiera elevar: ")
+                if(not exponente==""):
+                    comprobado=True
     #Al elevar a la 0 el resultado será 1
     if (exponente == 0):
         print ("Elevaste a cero, tu resultado es 1")
@@ -347,38 +382,130 @@ def IMC():
         estatura=estatura*100
         ideal=(estatura-100)*0.85
         print ("Tu peso ideal es " + str(ideal))
- #Este
+
 def decimalaBinario():
     #Se le pide al usuario que ingrese el número que quiere convertir a binario.
-    numero = int(input("Ingresa el número que quieres convertir a binario: "))
+    while True:
+        try:
+            numero = int(input("Ingresa el número que quieres convertir a binario: "))
+            break
+        except:
+            print("Introduce solo numeros")
     listaBinarial = []
     #Mientras el input sea mayor a cero, se hace el siguiente bucle
     while(numero>0):
         #Calcula el módulo del input
         residuo=numero%2
         #Mete el input en una lista
-        listaBinarial.append(residuo)
+        listaBinarial.append(str(residuo))
         #Divide input entre 2
         numero = numero//2
     #Reacomoda la lista de atrás hacia adelante
     listaReversa = reversed(listaBinarial)
     #Imprime lista al revés como el número binario.
-    print("Tu número binario es: ")
-    print(*listaReversa)
- #Este
+    print("Tu número binario es:","".join(listaReversa))
+
+def BinarioaHexa():
+    permitidos=["0","1"]
+    numero=input("Introduce el numero binario que quieres convertir a hexadecimal: ")
+    comprobar=0
+    comprobado=False
+    while(comprobado==False):
+        if(numero==""):
+            print("Introduce solo numeros")
+            numero=input("Introduce numeros a sumar (Separados por un espacio): ")
+        elif (comprobar<len(numero)):
+            while(comprobar<len(numero)):
+                if(numero[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    numero=input("Introduce numeros a sumar (Separados por un espacio): ")
+                if(not numero==""):
+                    comprobado=True
+    decimal=0
+    Hexa=""
+    for x in numero:
+        decimal=decimal*2+int (x)
+    decimal=int(decimal)
+    while ((decimal//2)!=0):
+        Hexa=str(decimal%2)+Hexa
+        decimal=decimal//2
+    bina=(str(decimal)+Hexa)
+    hexadecimal=hex(int(bina,2))
+    print ("Tu resultado es",hexadecimal)
+
+def HexaABinario():
+    permitidos=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
+    Hexadecimal=input("Introduce el numero hexadecimal que quieres convertir a binario: 0x")
+    comprobado=False
+    comprobar=0
+    while(comprobado==False):
+        if(Hexadecimal==""):
+            print("Introduce solo numeros")
+            Hexadecimal=input("Introduce numeros a sumar (Separados por un espacio): ")
+        elif (comprobar<len(Hexadecimal)):
+            while(comprobar<len(Hexadecimal)):
+                if(Hexadecimal[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    Hexadecimal=input("Introduce numeros a sumar (Separados por un espacio): ")
+                if(not Hexadecimal==""):
+                    comprobado=True
+    Hexadecimal=int(Hexadecimal,16)
+    listaBinarial = []
+    while(Hexadecimal>0):
+        #Calcula el módulo del input
+        residuo=Hexadecimal%2
+        #Mete el input en una lista
+        listaBinarial.append(str(residuo))
+        #Divide input entre 2
+        Hexadecimal = Hexadecimal//2
+    #Reacomoda la lista de atrás hacia adelante
+    #listaReversa = reversed(listaBinarial)
+    listaBinarial.reverse()
+    #Imprime lista al revés como el número binario.
+    #print ("".join(listaBinarial))
+    print("Tu número binario es:","".join(listaBinarial))
+
+
 def binarioaDecimal():
     #Usuario mete el número binario que va a convertir a decimal
-    binario = input("Ingresa el número binario a convertir a decimal: ")
+    permitidos=["0","1"]
+    binario = input("Ingresa el número binario a convertir a decimal: 0x")
+    comprobar=0
+    comprobado=False
+    while(comprobado==False):
+        if(binario==""):
+            print("Introduce solo numeros")
+            binario=input("Introduce numeros a sumar (Separados por un espacio): ")
+        elif (comprobar<len(binario)):
+            while(comprobar<len(binario)):
+                if(binario[comprobar]in permitidos):
+                    comprobar+=1
+                else:
+                    comprobar=0
+                    print("Introduce solo numeros")
+                    binario=input("Introduce numeros a sumar (Separados por un espacio): ")
+                if(not binario==""):
+                    comprobado=True
     #Se crea variable decimal, la cual nos ayudará en el proceso de conversión.
     decimal = 0
-    
     for x in binario:
         decimal = decimal*2 + int(x)
-    print ("Tu número en decimal es: \n" + str(decimal))
- #Este
+    print ("Tu número en decimal es:",str(decimal))
+
 def numeroprimo():
     #Usuario introduce número que quiere saber si es primo
-    x= int(input("Introduzca un numero entero: "))
+    while True:
+        try:
+            x= int(input("Introduzca un numero entero: "))
+            break
+        except:
+            print ("Introduce solo numeros")
     #Bandera de primo es igual a verdadero
     esPrimo = True
     #Mientras el contador sea menor a x(x siendo el input del número)
@@ -394,9 +521,27 @@ def numeroprimo():
           print ("El numero",x,"no es primo")
     else:
         print("El numero",x,"no es primo")
-#Este
+
 def HexadecimalaDecimal():
-   NumoerAconvertir = input ("introduce el número en Hexadecimal que quieras convertir a decimal: ")
+   permitidos=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
+   NumoerAconvertir = input ("Introduce el número en Hexadecimal que quieras convertir a decimal: 0x")
+   #Hexadecimal=input("Introduce el numero hexadecimal que quieres convertir a binario: ")
+   comprobado=False
+   comprobar=0
+   while(comprobado==False):
+       if(NumoerAconvertir==""):
+           print("Introduce solo numeros")
+           NumoerAconvertir=input("Introduce numeros a sumar (Separados por un espacio): ")
+       elif (comprobar<len(NumoerAconvertir)):
+           while(comprobar<len(NumoerAconvertir)):
+               if(NumoerAconvertir[comprobar]in permitidos):
+                   comprobar+=1
+               else:
+                   comprobar=0
+                   print("Introduce solo numeros")
+                   NumoerAconvertir=input("Introduce numeros a sumar (Separados por un espacio): ")
+               if(not NumoerAconvertir==""):
+                   comprobado=True
    Numeroconvertido = int(NumoerAconvertir,16)
    
    print ("El número convertido a decimal es: " + str(Numeroconvertido))
@@ -579,7 +724,6 @@ def PrimosEnRango():
                 Numeros.append(i)
     print("\n"+"Los numeros primos en ese rango son:",*Numeros)
 
-
 def serpientesyescaleras():
     #Declara Variables del juego
     tiros = 0
@@ -678,7 +822,7 @@ def guebitohKonCacsum():
     print("no, ya enserio, estas reprobado para toda la vida :)")
     time.sleep(1)
 
-#bandera para saber si elusuairo quiere hacer otra operación
+#bandera para saber si el usuario quiere hacer otra operación
 continuar = True
 
 #Se manda a llamar la función presentación, la cual ha ce un display del mensaje de bienvenida y le pregunta al usuario qué función es la que quiere hacer.
@@ -719,20 +863,24 @@ while(continuar==True):
     elif (operacion == "13"):
         decimalaBinario()
     elif (operacion == "14"):
-        metrosaYardas()
+        BinarioaHexa()
     elif (operacion == "15"):
-        yardasaMetros()
+        HexaABinario()
     elif (operacion == "16"):
-        metrosaPulgadas()
+        metrosaYardas()
     elif (operacion == "17"):
-        pulgadasaMetros()
-    elif (operacion == "18"):
-        IMC()
+        yardasaMetros()
+    elif (operacion=="18"):
+        metrosaPulgadas()
     elif(operacion =="19"):
-        numeroprimo()
+        pulgadasaMetros()
     elif(operacion=="20"):
+        IMC()
+    elif(operacion=="21"):
+        numeroprimo()
+    elif(operacion=="22"):
         PrimosEnRango()
-    elif(operacion =="21"):
+    elif(operacion =="23"):
         #Con los easter eggs es como el menú, sólo que llama a toda las funciones de juego.
         print("1.-Ahorcado")
         print("2.-Serpientes y Escaleras")
@@ -748,13 +896,17 @@ while(continuar==True):
             guebitohKonCacsum()
 
     print(" ")
-    pregunta = input('Quieres hacer otra operacion?(escribe "si" o "no")\n')
-    presentacion()
-    if(pregunta =="no"):
-        print("Gracias por usar la calculadora :D")
-        time.sleep(2)
-        print("Te queremos ieipi, no nos repruebes de por vida D:")
-        time.sleep(1)
-        sys.exit()
-
+    pregunta = input('Quieres hacer otra operacion?(escribe "Si" o "No")\n')
+    if not pregunta=="si" or not pregunta== "no":
+        print ('Escribe "Si" o "No"\n')
+        pregunta=input('Quieres hacer otra operacion?(escribe "Si" o "No")\n')
+        if(pregunta =="no"):
+            print("Gracias por usar la calculadora :D")
+            time.sleep(2)
+            print("Te queremos ieipi, no nos repruebes de por vida D:")
+            time.sleep(1)
+            sys.exit()
+        elif(pregunta=="si"):
+            presentacion()
+            continue
 
