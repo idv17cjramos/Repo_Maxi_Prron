@@ -382,7 +382,7 @@ def IMC():
         estatura=estatura*100
         ideal=(estatura-100)*0.85
         print ("Tu peso ideal es " + str(ideal))#lsito
-
+""" función que permite hacer conversión de un sistema numérico a otro"""
 def decimalaBinario():
     #Se le pide al usuario que ingrese el número que quiere convertir a binario.
     while True:
@@ -404,7 +404,7 @@ def decimalaBinario():
     listaReversa = reversed(listaBinarial)
     #Imprime lista al revés como el número binario.
     print("Tu número binario es:","".join(listaReversa))#lsito
-
+""" función que permite hacer conversión de un sistema numérico a otro"""
 def BinarioaHexa():
     permitidos=["0","1"]
     numero=input("Introduce el numero binario que quieres convertir a hexadecimal: ")
@@ -435,7 +435,7 @@ def BinarioaHexa():
     bina=(str(decimal)+Hexa)
     hexadecimal=hex(int(bina,2))
     print ("Tu resultado es",hexadecimal)#lsito
-
+""" función que permite hacer conversión de un sistema numérico a otro"""
 def HexaABinario():
     permitidos=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
     Hexadecimal=input("Introduce el numero hexadecimal que quieres convertir a binario: 0x")
@@ -470,7 +470,7 @@ def HexaABinario():
     #Imprime lista al revés como el número binario.
     #print ("".join(listaBinarial))
     print("Tu número binario es:","".join(listaBinarial))#lsito
-
+""" función que permite hacer conversión de un sistema numérico a otro"""
 def binarioaDecimal():
     #Usuario mete el número binario que va a convertir a decimal
     permitidos=["0","1"]
@@ -496,7 +496,7 @@ def binarioaDecimal():
     for x in binario:
         decimal = decimal*2 + int(x)
     print ("Tu número en decimal es:",str(decimal))#lsito
-
+""" Permite saber si un número primo o no a aprtir de input del usuario """
 def numeroprimo():
     #Usuario introduce número que quiere saber si es primo
     while True:
@@ -520,7 +520,7 @@ def numeroprimo():
           print ("El numero",x,"no es primo")
     else:
         print("El numero",x,"no es primo")#listo
-
+""" función que permite hacer conversión de un sistema numérico a otro"""
 def HexadecimalaDecimal():
    permitidos=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
    NumoerAconvertir = input ("Introduce el número en Hexadecimal que quieras convertir a decimal: 0x")
@@ -544,7 +544,7 @@ def HexadecimalaDecimal():
    Numeroconvertido = int(NumoerAconvertir,16)
    
    print ("El número convertido a decimal es: " + str(Numeroconvertido))#listo
-
+""" función que permite hacer conversión de un sistema numérico a otro"""
 def decimalaHexadecimal():
     n = input("Ingresa el número decimal que quieres convertir a hexadecimal: ")
     Hexa=""
@@ -572,7 +572,7 @@ def decimalaHexadecimal():
     bina=(str(n)+Hexa)
     hexadecimal=hex(int(bina,2))
     print ("Tu resultado es",hexadecimal)#lsito
-
+""" Tercera aprte y conclusión del mesjor ister ejj que se en cuentra en la historia de los ister ejjs"""
 def ahorcado():
     #diccionarios con frases que se va a jugar
     frases = {"InFamous":["no pidas una vida mas facil pide ser mas fuerte","todo hombre es responsable del bien que no ha hecho","no pienso hacer esto cada vez para que tu mojes"],
@@ -695,7 +695,7 @@ def ahorcado():
             print("PD: Y solo te tomo " +str(turnos) + " intentos!")
             ganar = True
         turnos += 1#listo
-
+""" Permite saber cuáles son los número primos que hay en un rango determinado"""
 def PrimosEnRango():
     Numeros=[]
     verificar=0
@@ -722,7 +722,7 @@ def PrimosEnRango():
             else:
                 Numeros.append(i)
     print("\n"+"Los numeros primos en ese rango son:",*Numeros)#listo
-
+"""Segunda aprte dle mejor ister ejj de toda la existencia """
 def serpientesyescaleras():
     #Declara Variables del juego
     tiros = 0
@@ -806,7 +806,7 @@ def serpientesyescaleras():
         turno = turno + 1
         if (turno >= n):
             turno = 0#lsito
-
+"""El mejor isterjj de la vida y la existencia, el primero de muchos por haber  """
 def guebitohKonCacsum():
     #Esta es la magia que le da substancia a todo este programa, sin esto el programa no sirve.
     #algunas personas dirían que gracias a esto... se hace la magia.
