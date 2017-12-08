@@ -1,5 +1,6 @@
 #Bienvenido Saint Yeipi
 #Importamos el tiempo...
+#Gracias por todo ieipi, por fa dannos más clases de progra plx
 
 #Lo de abajo es para poder usar caracteres que no estan en el teclado americano
 #!/usr/bin/env python
@@ -9,7 +10,7 @@ import time
 import sys
 import random
 
-
+""" Presentación del códig, se hace un display de la UI que le ayudará al usuario a elegir la función que desea ejecutar """
 def presentacion(): 
     #Texto de bienvenida para el usuario, contiene todas las operaciones de la calculadora numeradas
     print ("Bienvenido a la librería Maxi Dog")
@@ -38,8 +39,8 @@ def presentacion():
     print("21.-Calcular si es numero primo")
     print("22.-Calcular numeros en un rango")
     print("23.-Extras")
-    print ("-"*80+  "\n")
-
+    print ("-"*80+  "\n")#lsito
+""" Programa sencillo que le pemrite hacer una suma de n números, siempre y cuando éstos estén separados por un especio """
 def suma():
     permitidos=["1","2","3","4","5","6","7","8","9","0"," ",".","-"]
     #Solicita un input del usuario
@@ -75,8 +76,8 @@ def suma():
     else:
         total=total
     #Imprime el resultado de la suma
-    print ("El resultado es:",total)
- 
+    print ("El resultado es:",total)#lsito
+"""Permite al usuario hacer una resta de n numeros, de otro numero dado """
 def resta():
     restita1=[]
 
@@ -111,14 +112,13 @@ def resta():
     restita2 = [(x) for x in restita2.split (" ") ]
 
     total2 = 0
-    #for numero2 in restita2:
-    #    total2 -= int(numero2)
+
     #Suma los minuendos y los sustraendos e imprime el resultado
     restita2=list(map(int, restita2))
     restita3=sum(restita2)
     final=restita1-restita3
-    print ("El resultado es:",final)
- 
+    print ("El resultado es:",final)#lsito
+""" multiplicación de los n números que se le den al programa, no hay restricción de cuántos, sólo que estén separados por un espacioa """
 def multiplicacion():
     permitidos=["1","2","3","4","5","6","7","8","9","0"," ",".","-"]
     #Solicita los numeros a multiplicar
@@ -150,8 +150,8 @@ def multiplicacion():
         total=int(total)
     else:
         total=total
-    print ("El resultado es:", total) 
-
+    print ("El resultado es:", total) #listo
+"""función que permite hacer una suma sencilla entre 2 números de longitud n """
 def division():
     #Solicita el dividendo y checa si son numeros
     while True:
@@ -173,8 +173,8 @@ def division():
     if verificador==0:
         print (int(cociente))
     else:
-        print (cociente)
- 
+        print (cociente)#listo
+"""en esta función se hace una división y se le da como resultado el residuo de la operación """
 def modulo():
  #Solicita el dividendo
     while True:
@@ -192,8 +192,8 @@ def modulo():
             print("Introduce solo numeros")
     #divide el dividendo entre el divisor e imprime el residuo
     print ("El resultado es: ")
-    print (int(dividendo)%int(divisor))
- 
+    print (int(dividendo)%int(divisor))#listo
+"""Esto permite hacer al usuario una razí de base n, si el usuario no mete input, se hace al cuadrado """
 def raiz():
     cuadrada = 2
     #Solicita el numero base y el exponente y checa si son numeros
@@ -226,8 +226,8 @@ def raiz():
     except (ValueError):
         print("No introdujiste radical, se sacara raiz cuadrada.")
         print("El resultado es: ")
-        print(str(numeroBase ** (1/cuadrada)))
- #Este ya quedo
+        print(str(numeroBase ** (1/cuadrada)))#listo
+""" El usuairo puede elevar un número a la n, si no ponen ningún número, se hace al cuadrado"""
 def potencia():
     permitidos=["1","2","3","4","5","6","7","8","9","0","",".","-"]
     #Solicita el numero base y el exponente
@@ -276,22 +276,8 @@ def potencia():
     except (ValueError):
         print("No introdujiste exponente, se elevará al cuadrado.")
         print("El resultado es: ")
-        print(int(numeroBase) ** int(alCuadrado))
- 
-def metrosaYardas():
-    #Se solicitan al usuario los metros a convertir
-    while True:
-        try:
-            metros=float(input("Escribe la cantidad de metros a convertir: "))
-            break
-        except:
-            print ("Introduce solo numeros")
-    #Esta es la equivalencia de yardas por metro
-    yardas = 1.09361
-    #Se multiplican los metros por su equivalencia en yardas y se imprime el resultado
-    print ("El resultado es: ")
-    print ((metros*yardas),"yardas")
- 
+        print(int(numeroBase) ** int(alCuadrado))#listo
+"""Función para hacer una conversión entre sistemas de medición """
 def yardasaMetros():
     #Se solicitan al usuario los yardas a convertir
     while True:
@@ -304,8 +290,22 @@ def yardasaMetros():
     metros = 0.9144
     #Se multiplican las yardas por su equivalencia en metros y se imprime el resultado
     print ("El resultado es: ")
-    print ((yardas*metros),"metros")
-
+    print ((yardas*metros),"metros")#lsito
+"""Función para hacer una conversión entre sistemas de medición """
+def metrosaYardas():
+    #Se solicitan al usuario los metros a convertir
+    while True:
+        try:
+            metros=float(input("Escribe la cantidad de metros a convertir: "))
+            break
+        except:
+            print ("Introduce solo numeros")
+    #Esta es la equivalencia de yardas por metro
+    yardas = 1.09361
+    #Se multiplican los metros por su equivalencia en yardas y se imprime el resultado
+    print ("El resultado es: ")
+    print ((metros*yardas),"yardas")#listo
+"""Función para hacer una conversión entre sistemas de medición """
 def metrosaPulgadas():
     #Se solicita al usuario la cantidad de metros
     while True:
@@ -318,8 +318,8 @@ def metrosaPulgadas():
     pulgadas = 39.3701
     #Se imprime el resultado y se multiplica pulgadas(que es valor continuo) por metros(que es la cantidad que se le pide al usuario)
     print ("El resultado es: ")
-    print ((metros*pulgadas),"pulgadas")
- 
+    print ((metros*pulgadas),"pulgadas")#listo
+"""Función para hacer una conversión entre sistemas de medición """
 def pulgadasaMetros():
     #Se solicita al usuario la cantidad de pulgadas
     while True:
@@ -332,8 +332,8 @@ def pulgadasaMetros():
     metros = 0.0254
     #Se imprime el resultado y se multiplica metros(que es valor continuo) por pulgadas(que es la cantidad que se le pide al usuario)
     print ("El resultado es: ")
-    print (pulgadas*metros,"metros")
- 
+    print (pulgadas*metros,"metros")#listo
+"""Esta función permite que el usuario ingrese unos datos, se le da si tiene sobre peso o está en su peso ideal """
 def IMC():
     #Se le pide al usuario que meta su sexo, peso y estatura.
     while True:
@@ -381,7 +381,7 @@ def IMC():
     elif(sexo=="mujer"):
         estatura=estatura*100
         ideal=(estatura-100)*0.85
-        print ("Tu peso ideal es " + str(ideal))
+        print ("Tu peso ideal es " + str(ideal))#lsito
 
 def decimalaBinario():
     #Se le pide al usuario que ingrese el número que quiere convertir a binario.
@@ -403,7 +403,7 @@ def decimalaBinario():
     #Reacomoda la lista de atrás hacia adelante
     listaReversa = reversed(listaBinarial)
     #Imprime lista al revés como el número binario.
-    print("Tu número binario es:","".join(listaReversa))
+    print("Tu número binario es:","".join(listaReversa))#lsito
 
 def BinarioaHexa():
     permitidos=["0","1"]
@@ -434,7 +434,7 @@ def BinarioaHexa():
         decimal=decimal//2
     bina=(str(decimal)+Hexa)
     hexadecimal=hex(int(bina,2))
-    print ("Tu resultado es",hexadecimal)
+    print ("Tu resultado es",hexadecimal)#lsito
 
 def HexaABinario():
     permitidos=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
@@ -469,8 +469,7 @@ def HexaABinario():
     listaBinarial.reverse()
     #Imprime lista al revés como el número binario.
     #print ("".join(listaBinarial))
-    print("Tu número binario es:","".join(listaBinarial))
-
+    print("Tu número binario es:","".join(listaBinarial))#lsito
 
 def binarioaDecimal():
     #Usuario mete el número binario que va a convertir a decimal
@@ -496,7 +495,7 @@ def binarioaDecimal():
     decimal = 0
     for x in binario:
         decimal = decimal*2 + int(x)
-    print ("Tu número en decimal es:",str(decimal))
+    print ("Tu número en decimal es:",str(decimal))#lsito
 
 def numeroprimo():
     #Usuario introduce número que quiere saber si es primo
@@ -520,7 +519,7 @@ def numeroprimo():
       else:
           print ("El numero",x,"no es primo")
     else:
-        print("El numero",x,"no es primo")
+        print("El numero",x,"no es primo")#listo
 
 def HexadecimalaDecimal():
    permitidos=["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
@@ -544,7 +543,7 @@ def HexadecimalaDecimal():
                    comprobado=True
    Numeroconvertido = int(NumoerAconvertir,16)
    
-   print ("El número convertido a decimal es: " + str(Numeroconvertido))
+   print ("El número convertido a decimal es: " + str(Numeroconvertido))#listo
 
 def decimalaHexadecimal():
     n = input("Ingresa el número decimal que quieres convertir a hexadecimal: ")
@@ -572,7 +571,7 @@ def decimalaHexadecimal():
         n=n//2
     bina=(str(n)+Hexa)
     hexadecimal=hex(int(bina,2))
-    print ("Tu resultado es",hexadecimal)
+    print ("Tu resultado es",hexadecimal)#lsito
 
 def ahorcado():
     #diccionarios con frases que se va a jugar
@@ -695,7 +694,7 @@ def ahorcado():
             print("Eres una chingoneria, le atinaste!")
             print("PD: Y solo te tomo " +str(turnos) + " intentos!")
             ganar = True
-        turnos += 1
+        turnos += 1#listo
 
 def PrimosEnRango():
     Numeros=[]
@@ -722,7 +721,7 @@ def PrimosEnRango():
                     break
             else:
                 Numeros.append(i)
-    print("\n"+"Los numeros primos en ese rango son:",*Numeros)
+    print("\n"+"Los numeros primos en ese rango son:",*Numeros)#listo
 
 def serpientesyescaleras():
     #Declara Variables del juego
@@ -806,7 +805,7 @@ def serpientesyescaleras():
             print ("Avanzaste " + str(pasos) + " pasos")
         turno = turno + 1
         if (turno >= n):
-            turno = 0
+            turno = 0#lsito
 
 def guebitohKonCacsum():
     #Esta es la magia que le da substancia a todo este programa, sin esto el programa no sirve.
@@ -820,12 +819,12 @@ def guebitohKonCacsum():
     print("Es neta, vato? >:V")
     time.sleep(3)
     print("no, ya enserio, estas reprobado para toda la vida :)")
-    time.sleep(1)
+    time.sleep(1)#lsito
 
 #bandera para saber si el usuario quiere hacer otra operación
 continuar = True
 
-#Se manda a llamar la función presentación, la cual ha ce un display del mensaje de bienvenida y le pregunta al usuario qué función es la que quiere hacer.
+#Se manda a llamar la función presentación, la cual hace un display del mensaje de bienvenida y le pregunta al usuario qué función es la que quiere hacer.
 presentacion()
 
 
